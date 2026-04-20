@@ -1,6 +1,7 @@
 import type { Place } from "@/lib/types";
+import { placesExtra } from "./places-extra";
 
-export const places: Place[] = [
+const placesCore: Place[] = [
   // ========== MIRADORES / NATURALEZA (11) ==========
   {
     slug: "roque-nublo",
@@ -578,6 +579,9 @@ export const places: Place[] = [
   },
 ];
 
+// Combina los 37 del core + 63 extras = 100 sitios
+export const places: Place[] = [...placesCore, ...placesExtra];
+
 export function getPlaceBySlug(slug: string): Place | null {
   return places.find((p) => p.slug === slug) ?? null;
 }
@@ -585,4 +589,29 @@ export function getPlaceBySlug(slug: string): Place | null {
 export function getPlacesByCategory(category: string | null) {
   if (!category || category === "all") return places;
   return places.filter((p) => p.category === category);
+}
+
+/**
+ * Haversine distance entre dos coordenadas (km).
+ */
+export function distanceKm(a: Place, b: Place): number {
+  const R = 6371;
+  const dLat = ((b.lat - a.lat) * Math.PI) / 180;
+  const dLng = ((b.lng - a.lng) * Math.PI) / 180;
+  const lat1 = (a.lat * Math.PI) / 180;
+  const lat2 = (b.lat * Math.PI) / 180;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+
+/**
+ * Retorna los N sitios más cercanos a uno dado (excluyéndolo a sí mismo).
+ */
+export function nearbyPlaces(place: Place, n = 3): Place[] {
+  return places
+    .filter((p) => p.slug !== place.slug && p.category !== "casita")
+    .map((p) => ({ place: p, dist: distanceKm(place, p) }))
+    .sort((a, b) => a.dist - b.dist)
+    .slice(0, n)
+    .map((x) => x.place);
 }

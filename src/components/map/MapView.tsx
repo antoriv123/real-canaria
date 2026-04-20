@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import type { Place, PlaceCategory } from "@/lib/types";
 import type { Locale } from "@/i18n/config";
 
@@ -37,7 +37,9 @@ export function MapView({ places, highlight }: Props) {
   const mapRef = useRef<any>(null);
   const markersRef = useRef<Record<string, { remove: () => void; getElement: () => HTMLElement }>>({});
   const locale = useLocale() as Locale;
+  const t = useTranslations("place");
   const [error, setError] = useState<string | null>(null);
+  const seeMoreText = t("seeMore");
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -122,7 +124,7 @@ export function MapView({ places, highlight }: Props) {
               <div style="font-size: 10px; text-transform: uppercase; color: ${CATEGORY_COLORS[place.category]}; font-weight: 700; letter-spacing: 0.04em; margin-bottom: 4px;">${place.category}</div>
               <div style="font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 15px; color: #393E47; margin-bottom: 4px; line-height: 1.25;">${safeName}</div>
               <div style="font-size: 12px; color: #6B7076; line-height: 1.4; margin-bottom: 8px;">${safeDesc}${t.description.length > 140 ? "…" : ""}</div>
-              <a href="/${locale}/sitio/${place.slug}" style="color: #A22A1C; font-size: 12px; font-weight: 600; text-decoration: none;">See more →</a>
+              <a href="/${locale}/sitio/${place.slug}" style="color: #A22A1C; font-size: 12px; font-weight: 600; text-decoration: none;">${seeMoreText} →</a>
             </div>
           `);
 
@@ -151,7 +153,7 @@ export function MapView({ places, highlight }: Props) {
       mapRef.current = null;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [JSON.stringify(places.map((p) => p.slug)), locale]);
+  }, [JSON.stringify(places.map((p) => p.slug)), locale, seeMoreText]);
 
   useEffect(() => {
     if (!mapRef.current) return;

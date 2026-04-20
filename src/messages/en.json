@@ -6,7 +6,9 @@
   "nav": {
     "explore": "Explore",
     "myPlan": "My plan",
-    "about": "About"
+    "routes": "Routes",
+    "about": "About",
+    "logout": "Log out"
   },
   "hero": {
     "title": "Don't just lie on the beach.",
@@ -21,7 +23,14 @@
     "museum": "Museums",
     "restaurant": "Restaurants",
     "casita": "Rural houses",
-    "showing": "{count, plural, =1 {1 place} other {# places}}"
+    "showing": "{count, plural, =1 {1 place} other {# places}}",
+    "searchPlaceholder": "Search a place…",
+    "noResults": "No places match this filter.",
+    "difficulty": "Difficulty",
+    "duration": "Duration",
+    "durationShort": "1h or less",
+    "durationMedium": "Half day",
+    "durationLong": "Full day"
   },
   "signup": {
     "title": "Personalize your plan",
@@ -50,7 +59,38 @@
     "tip": "Local tip",
     "directions": "How to get there",
     "website": "Official website",
-    "back": "Back to map"
+    "back": "Back to map",
+    "seeMore": "See more",
+    "openingHours": "Hours",
+    "price": "Price",
+    "priceFree": "Free",
+    "visitDuration": "Suggested time",
+    "minutes": "{min} min",
+    "hours": "{h} h",
+    "accessibility": "Access",
+    "accessEasy": "Easy",
+    "accessModerate": "Moderate",
+    "accessHard": "Hard",
+    "nearby": "Nearby",
+    "addToPlan": "Add to my plan",
+    "removeFromPlan": "Remove from my plan",
+    "sleepHere": "Where to stay near here?"
+  },
+  "routes": {
+    "title": "Suggested day routes",
+    "subtitle": "Curated full-day itineraries",
+    "durationLabel": "Duration: {hours} h",
+    "distanceLabel": "Distance: {km} km"
+  },
+  "sleep": {
+    "title": "Where to sleep",
+    "subtitle": "Rural houses handpicked by Casitas Canarias",
+    "cta": "See all houses"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "subtitle": "This place doesn't exist or has moved.",
+    "back": "Back home"
   },
   "footer": {
     "tagline": "A project by Casitas Canarias — rural rentals in Gran Canaria since 2020.",

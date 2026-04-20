@@ -13,6 +13,8 @@ export interface PlaceTranslation {
   tip?: string;
 }
 
+export type Accessibility = "easy" | "moderate" | "hard";
+
 export interface Place {
   slug: string;
   category: PlaceCategory;
@@ -25,6 +27,12 @@ export interface Place {
   isCasita?: boolean;
   featured?: boolean;
   translations: Record<Locale, PlaceTranslation>;
+  // Metadatos enriquecidos (opcional)
+  openingHours?: string | null;       // "9:00-18:00" | "24h" | null
+  priceEur?: number | null;            // null = gratis o n/a
+  visitDurationMinutes?: number | null;
+  accessibility?: Accessibility;
+  bestSeason?: string[];               // ["spring", "summer", ...]
 }
 
 export interface User {

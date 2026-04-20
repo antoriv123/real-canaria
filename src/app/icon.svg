@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#A22A1C" rx="96"/>
+  <path d="M256 96 C160 96 96 168 96 256 C96 352 256 448 256 448 C256 448 416 352 416 256 C416 168 352 96 256 96 Z" fill="#FDFAF0"/>
+  <circle cx="256" cy="240" r="48" fill="#A22A1C"/>
+  <text x="256" y="490" font-family="Georgia, serif" font-size="40" font-weight="700" fill="#A22A1C" text-anchor="middle">RC</text>
+</svg>

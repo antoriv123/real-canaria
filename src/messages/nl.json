@@ -6,7 +6,9 @@
   "nav": {
     "explore": "Ontdekken",
     "myPlan": "Mijn plan",
-    "about": "Over ons"
+    "routes": "Routes",
+    "about": "Over ons",
+    "logout": "Uitloggen"
   },
   "hero": {
     "title": "Blijf niet alleen op het strand.",
@@ -21,7 +23,14 @@
     "museum": "Musea",
     "restaurant": "Restaurants",
     "casita": "Landhuizen",
-    "showing": "{count, plural, =1 {1 plek} other {# plekken}}"
+    "showing": "{count, plural, =1 {1 plek} other {# plekken}}",
+    "searchPlaceholder": "Zoek een plek…",
+    "noResults": "Geen plekken voor dit filter.",
+    "difficulty": "Moeilijkheid",
+    "duration": "Duur",
+    "durationShort": "1 uur of minder",
+    "durationMedium": "Halve dag",
+    "durationLong": "Hele dag"
   },
   "signup": {
     "title": "Maak jouw plan",
@@ -50,7 +59,38 @@
     "tip": "Lokale tip",
     "directions": "Hoe kom je er",
     "website": "Officiële website",
-    "back": "Terug naar kaart"
+    "back": "Terug naar kaart",
+    "seeMore": "Meer",
+    "openingHours": "Openingstijden",
+    "price": "Prijs",
+    "priceFree": "Gratis",
+    "visitDuration": "Aanbevolen tijd",
+    "minutes": "{min} min",
+    "hours": "{h} u",
+    "accessibility": "Toegang",
+    "accessEasy": "Makkelijk",
+    "accessModerate": "Matig",
+    "accessHard": "Moeilijk",
+    "nearby": "In de buurt",
+    "addToPlan": "Aan mijn plan",
+    "removeFromPlan": "Uit plan halen",
+    "sleepHere": "Waar overnachten?"
+  },
+  "routes": {
+    "title": "Aanbevolen dagroutes",
+    "subtitle": "Samengestelde dagtrips",
+    "durationLabel": "Duur: {hours} u",
+    "distanceLabel": "Afstand: {km} km"
+  },
+  "sleep": {
+    "title": "Waar slapen",
+    "subtitle": "Landhuizen van Casitas Canarias",
+    "cta": "Alle huizen zien"
+  },
+  "notFound": {
+    "title": "Pagina niet gevonden",
+    "subtitle": "Deze plek bestaat niet of is verplaatst.",
+    "back": "Terug naar home"
   },
   "footer": {
     "tagline": "Een project van Casitas Canarias — landhuizen op Gran Canaria sinds 2020.",

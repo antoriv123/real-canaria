@@ -6,7 +6,9 @@
   "nav": {
     "explore": "Esplora",
     "myPlan": "Il mio piano",
-    "about": "Chi siamo"
+    "routes": "Itinerari",
+    "about": "Chi siamo",
+    "logout": "Esci"
   },
   "hero": {
     "title": "Non fermarti in spiaggia.",
@@ -21,7 +23,14 @@
     "museum": "Musei",
     "restaurant": "Ristoranti",
     "casita": "Case rurali",
-    "showing": "{count, plural, =1 {1 luogo} other {# luoghi}}"
+    "showing": "{count, plural, =1 {1 luogo} other {# luoghi}}",
+    "searchPlaceholder": "Cerca un luogo…",
+    "noResults": "Nessun luogo con questo filtro.",
+    "difficulty": "Difficoltà",
+    "duration": "Durata",
+    "durationShort": "1 ora o meno",
+    "durationMedium": "Mezza giornata",
+    "durationLong": "Giornata intera"
   },
   "signup": {
     "title": "Personalizza il tuo piano",
@@ -50,7 +59,38 @@
     "tip": "Consiglio locale",
     "directions": "Come arrivare",
     "website": "Sito ufficiale",
-    "back": "Torna alla mappa"
+    "back": "Torna alla mappa",
+    "seeMore": "Vedi di più",
+    "openingHours": "Orari",
+    "price": "Prezzo",
+    "priceFree": "Gratuito",
+    "visitDuration": "Tempo suggerito",
+    "minutes": "{min} min",
+    "hours": "{h} h",
+    "accessibility": "Accesso",
+    "accessEasy": "Facile",
+    "accessModerate": "Medio",
+    "accessHard": "Difficile",
+    "nearby": "Nelle vicinanze",
+    "addToPlan": "Aggiungi al piano",
+    "removeFromPlan": "Togli dal piano",
+    "sleepHere": "Dove dormire vicino?"
+  },
+  "routes": {
+    "title": "Itinerari per un giorno",
+    "subtitle": "Tour giornalieri selezionati",
+    "durationLabel": "Durata: {hours} h",
+    "distanceLabel": "Distanza: {km} km"
+  },
+  "sleep": {
+    "title": "Dove dormire",
+    "subtitle": "Case rurali selezionate da Casitas Canarias",
+    "cta": "Vedi tutte le case"
+  },
+  "notFound": {
+    "title": "Pagina non trovata",
+    "subtitle": "Questo luogo non esiste o è stato spostato.",
+    "back": "Torna alla home"
   },
   "footer": {
     "tagline": "Un progetto di Casitas Canarias — case rurali a Gran Canaria dal 2020.",

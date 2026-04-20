@@ -6,7 +6,9 @@
   "nav": {
     "explore": "Explorar",
     "myPlan": "Mi plan",
-    "about": "Sobre nosotros"
+    "routes": "Rutas",
+    "about": "Sobre nosotros",
+    "logout": "Cerrar sesión"
   },
   "hero": {
     "title": "No te quedes solo en la playa.",
@@ -21,7 +23,14 @@
     "museum": "Museos",
     "restaurant": "Restaurantes",
     "casita": "Casas rurales",
-    "showing": "{count, plural, =1 {1 sitio} other {# sitios}}"
+    "showing": "{count, plural, =1 {1 sitio} other {# sitios}}",
+    "searchPlaceholder": "Buscar un sitio…",
+    "noResults": "No hay sitios con ese filtro.",
+    "difficulty": "Dificultad",
+    "duration": "Tiempo",
+    "durationShort": "1h o menos",
+    "durationMedium": "Medio día",
+    "durationLong": "Día completo"
   },
   "signup": {
     "title": "Personaliza tu plan",
@@ -50,7 +59,38 @@
     "tip": "Consejo local",
     "directions": "Cómo llegar",
     "website": "Web oficial",
-    "back": "Volver al mapa"
+    "back": "Volver al mapa",
+    "seeMore": "Ver más",
+    "openingHours": "Horario",
+    "price": "Precio",
+    "priceFree": "Gratis",
+    "visitDuration": "Tiempo sugerido",
+    "minutes": "{min} min",
+    "hours": "{h} h",
+    "accessibility": "Acceso",
+    "accessEasy": "Fácil",
+    "accessModerate": "Moderado",
+    "accessHard": "Difícil",
+    "nearby": "Cerca de aquí",
+    "addToPlan": "Añadir a mi plan",
+    "removeFromPlan": "Quitar de mi plan",
+    "sleepHere": "¿Dónde dormir cerca?"
+  },
+  "routes": {
+    "title": "Rutas sugeridas por día",
+    "subtitle": "Itinerarios curados para un día completo según tu tiempo",
+    "durationLabel": "Duración: {hours} h",
+    "distanceLabel": "Distancia: {km} km"
+  },
+  "sleep": {
+    "title": "Dónde dormir",
+    "subtitle": "Casas rurales seleccionadas por Casitas Canarias",
+    "cta": "Ver todas las casas"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "subtitle": "Este sitio no existe o ha cambiado de sitio.",
+    "back": "Volver al inicio"
   },
   "footer": {
     "tagline": "Un proyecto de Casitas Canarias — alquiler rural en Gran Canaria desde 2020.",

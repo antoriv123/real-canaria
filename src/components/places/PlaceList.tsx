@@ -7,6 +7,7 @@ import type { Locale } from "@/i18n/config";
 import { MapPin, Home, Mountain, Landmark, UtensilsCrossed, Bed } from "lucide-react";
 import { PlaceImage } from "./PlaceImage";
 import { getPlaceImageUrl } from "@/data/place-images";
+import { AddToPlanButton } from "./AddToPlanButton";
 
 const ICONS: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
   viewpoint: Mountain,
@@ -39,22 +40,23 @@ export function PlaceList({ places, onHover }: Props) {
         const t = place.translations[locale];
         return (
           <li key={place.slug}>
-            <Link
-              href={`/${locale}/sitio/${place.slug}`}
-              onMouseEnter={() => onHover?.(place.slug)}
-              onMouseLeave={() => onHover?.(null)}
-              className="block group rounded-[var(--radius-lg)] overflow-hidden bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-primary)]/40 transition-all hover:shadow-md"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <PlaceImage
-                  slug={place.slug}
-                  name={t.name}
-                  category={place.category}
-                  imageUrl={place.imageUrl || getPlaceImageUrl(place.slug)}
-                  isCasita={place.isCasita}
-                  className="transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
+            <div className="relative group">
+              <Link
+                href={`/${locale}/sitio/${place.slug}`}
+                onMouseEnter={() => onHover?.(place.slug)}
+                onMouseLeave={() => onHover?.(null)}
+                className="block rounded-[var(--radius-lg)] overflow-hidden bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-primary)]/40 transition-all hover:shadow-md"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <PlaceImage
+                    slug={place.slug}
+                    name={t.name}
+                    category={place.category}
+                    imageUrl={place.imageUrl || getPlaceImageUrl(place.slug)}
+                    isCasita={place.isCasita}
+                    className="transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
               <div className="p-4">
                 <div className="flex items-center gap-1.5 text-xs text-[var(--color-ink-muted)] mb-1.5">
                   <Icon size={12} />
@@ -65,7 +67,12 @@ export function PlaceList({ places, onHover }: Props) {
                 </h3>
                 <p className="text-sm text-[var(--color-ink-muted)] line-clamp-2">{t.description}</p>
               </div>
-            </Link>
+              </Link>
+              {/* Fav button overlay */}
+              <div className="absolute top-3 right-3 z-10">
+                <AddToPlanButton slug={place.slug} variant="icon" />
+              </div>
+            </div>
           </li>
         );
       })}

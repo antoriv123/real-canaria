@@ -6,7 +6,9 @@
   "nav": {
     "explore": "Entdecken",
     "myPlan": "Mein Plan",
-    "about": "Über uns"
+    "routes": "Routen",
+    "about": "Über uns",
+    "logout": "Abmelden"
   },
   "hero": {
     "title": "Bleib nicht nur am Strand.",
@@ -21,7 +23,14 @@
     "museum": "Museen",
     "restaurant": "Restaurants",
     "casita": "Landhäuser",
-    "showing": "{count, plural, =1 {1 Ort} other {# Orte}}"
+    "showing": "{count, plural, =1 {1 Ort} other {# Orte}}",
+    "searchPlaceholder": "Ort suchen…",
+    "noResults": "Keine Orte mit diesem Filter.",
+    "difficulty": "Schwierigkeit",
+    "duration": "Dauer",
+    "durationShort": "1 Std. oder weniger",
+    "durationMedium": "Halber Tag",
+    "durationLong": "Ganzer Tag"
   },
   "signup": {
     "title": "Personalisiere deinen Plan",
@@ -50,7 +59,38 @@
     "tip": "Tipp vom Einheimischen",
     "directions": "Wegbeschreibung",
     "website": "Offizielle Website",
-    "back": "Zurück zur Karte"
+    "back": "Zurück zur Karte",
+    "seeMore": "Mehr ansehen",
+    "openingHours": "Öffnungszeiten",
+    "price": "Preis",
+    "priceFree": "Kostenlos",
+    "visitDuration": "Empfohlene Dauer",
+    "minutes": "{min} Min.",
+    "hours": "{h} Std.",
+    "accessibility": "Zugang",
+    "accessEasy": "Einfach",
+    "accessModerate": "Mittel",
+    "accessHard": "Schwer",
+    "nearby": "In der Nähe",
+    "addToPlan": "Zu meinem Plan",
+    "removeFromPlan": "Aus Plan entfernen",
+    "sleepHere": "Wo übernachten?"
+  },
+  "routes": {
+    "title": "Empfohlene Tagesrouten",
+    "subtitle": "Kuratierte Tagesausflüge",
+    "durationLabel": "Dauer: {hours} Std.",
+    "distanceLabel": "Entfernung: {km} km"
+  },
+  "sleep": {
+    "title": "Wo übernachten",
+    "subtitle": "Landhäuser von Casitas Canarias",
+    "cta": "Alle Häuser ansehen"
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "subtitle": "Dieser Ort existiert nicht oder wurde verschoben.",
+    "back": "Zurück zur Startseite"
   },
   "footer": {
     "tagline": "Ein Projekt von Casitas Canarias — Landhäuser auf Gran Canaria seit 2020.",

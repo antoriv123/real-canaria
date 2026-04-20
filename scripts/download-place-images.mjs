@@ -1,18 +1,13 @@
 #!/usr/bin/env node
 /**
- * Descarga una foto real por cada slug en public/places/.
+ * Descarga 1 foto real por cada slug en public/places/.
  * Corre: `node scripts/download-place-images.mjs`
  *
- * Usa Wikimedia Commons Special:FilePath (redirect al archivo real)
- * + User-Agent explícito como pide la policy de Wikimedia.
- * Sleep de 800ms entre requests para no hacer bursts.
- *
- * Si un slug falla, continúa con el siguiente. El componente PlaceImage ya
- * tiene fallback SVG si un archivo no existe.
+ * Usa Wikimedia Commons Special:FilePath + User-Agent.
+ * Sleep entre requests. Idempotente (salta los ya descargados).
  */
 
 import { mkdir, writeFile, stat } from "node:fs/promises";
-import { createWriteStream } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -20,16 +15,16 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = path.resolve(__dirname, "..", "public", "places");
 
 const UA = "RealCanariaBot/1.0 (test project; contact: hola@tuapp.com)";
-const SLEEP_MS = 800;
+const SLEEP_MS = 500;
 
-// Helper: URL a Special:FilePath de Wikimedia (redirecciona al archivo final)
 function wmFile(filename) {
   return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}?width=1200`;
 }
 
-// Orden: por categoría lógica (naturaleza → pueblos → museos → restaurantes → casitas)
-const URLS = {
-  // --- Miradores / naturaleza ---
+// ============================================================
+// CORE (37 sitios originales)
+// ============================================================
+const CORE = {
   "roque-nublo": wmFile("Roque Nublo 2024-12-14.jpg"),
   "dunas-maspalomas": wmFile("Aerial view of the dunes and beach of Maspalomas, Canary Islands (52757630746).jpg"),
   "pico-nieves": wmFile("Pico de las Nieves 03.JPG"),
@@ -41,8 +36,6 @@ const URLS = {
   "faro-maspalomas": wmFile("GC Faro de Maspalomas R06.jpg"),
   "barranco-guayadeque": wmFile("Barranco de Guayadeque 2016 06.jpg"),
   "degollada-becerra": wmFile("Gran Canaria, Caldera de Tejeda.jpg"),
-
-  // --- Pueblos ---
   "vegueta": wmFile("Columbus House-Vegueta-Las Palmas Gran Canaria.jpg"),
   "puerto-mogan": wmFile("Puerto de Mogán (Gran Canaria) (Spain) - 52038215123.jpg"),
   "teror": wmFile("Plaza de teror.JPG"),
@@ -54,36 +47,105 @@ const URLS = {
   "artenara": wmFile("Cave houses - Artenara - 01.jpg"),
   "aguimes": wmFile("Iglesia de San Sebastián, en Agüimes (Las Palmas, España).jpg"),
   "galdar": wmFile("Gáldar, en Gran Canaria (Las Palmas, España).jpg"),
-
-  // --- Museos / cultura ---
   "jardin-canario": wmFile("Jardin Canario 1.jpg"),
   "museo-canario": wmFile("Museo Canario.JPG"),
   "casa-colon": wmFile("Casa de Colón, Museo, Las Palmas de Gran Canaria, España.jpg"),
   "cueva-pintada": wmFile("Cueva pintada grancanaria.jpg"),
   "cenobio-valeron": wmFile("Cenobio valeron cuevas.JPG"),
   "catedral-santa-ana": wmFile("Catedral de Santa Ana (Las Palmas de Gran Canaria).jpg"),
-
-  // --- Restaurantes (fallback a la zona donde están) ---
   "tagoror-guayadeque": wmFile("Barranco de Guayadeque 2016 06.jpg"),
   "las-nasas-agaete": wmFile("Puerto de las Nieves - panoramio.jpg"),
   "meson-la-silla": wmFile("Cave houses - Artenara - 01.jpg"),
   "la-vaca-azul": wmFile("Puerto de las Nieves - panoramio.jpg"),
   "el-santo": wmFile("Puerto de Mogán (Gran Canaria) (Spain) - 52038215123.jpg"),
-
-  // --- Casitas rurales (fallback al pueblo donde están) ---
   "casita-teror": wmFile("Plaza de teror.JPG"),
   "casita-aguimes": wmFile("Iglesia de San Sebastián, en Agüimes (Las Palmas, España).jpg"),
   "casita-valsequillo": wmFile("Valsequillo de Gran Canaria.jpg"),
   "casita-san-mateo": wmFile("Vega de San Mateo.jpg"),
 };
 
-// URLs fallback si la primera falla (Special:FilePath es case-sensitive con el nombre)
-const FALLBACKS = {
-  "casita-valsequillo": wmFile("Plaza_de_teror.JPG"),         // si Valsequillo falla
-  "casita-san-mateo": wmFile("Plaza_de_teror.JPG"),           // si San Mateo falla
-  "catedral-santa-ana": wmFile("Columbus House-Vegueta-Las Palmas Gran Canaria.jpg"), // fallback Vegueta
-  "jardin-canario": wmFile("Barranco de Guayadeque 2016 06.jpg"), // fallback naturaleza canaria
+// ============================================================
+// EXTRA (63 sitios nuevos)
+// ============================================================
+const EXTRA = {
+  // Naturaleza (20)
+  "cruz-tejeda": wmFile("Cruz de Tejeda 2017.jpg"),
+  "pozo-nieves": wmFile("Pico de las Nieves 03.JPG"),
+  "cuevas-cuatro-puertas": wmFile("Cuevas de los Cuatro Puertas.jpg"),
+  "montana-arucas": wmFile("Montaña de Arucas.jpg"),
+  "cueva-rey": wmFile("Cueva del Rey Artenara.jpg"),
+  "playa-canteras": wmFile("Playa de las Canteras 2016.jpg"),
+  "playa-confital": wmFile("El Confital.jpg"),
+  "playa-veneguera": wmFile("Playa de Veneguera.jpg"),
+  "playa-tauro": wmFile("Playa de Tauro.jpg"),
+  "playa-tasartico": wmFile("Playa de Tasartico.jpg"),
+  "playa-aguadulce": wmFile("Playa de Sardina del Norte.jpg"),
+  "roque-saucillo": wmFile("Bentayga4.jpg"),
+  "mirador-tirajanas": wmFile("Gran Canaria, Caldera de Tejeda.jpg"),
+  "barranco-veneguera": wmFile("Playa de Veneguera.jpg"),
+  "barranco-mogan": wmFile("Puerto de Mogán (Gran Canaria) (Spain) - 52038215123.jpg"),
+  "tamadaba": wmFile("Pinar de Tamadaba.jpg"),
+  "laurisilva-moya": wmFile("Doramas Tilos de Moya.jpg"),
+  "cruz-hoya-plata": wmFile("Aerial view of the dunes and beach of Maspalomas, Canary Islands (52757630746).jpg"),
+  "arinaga-volcano": wmFile("Montaña de Arinaga.jpg"),
+  "roque-aguayro": wmFile("Bentayga4.jpg"),
+
+  // Pueblos (17) — Fontanales first!
+  "fontanales": wmFile("Fontanales - Gran Canaria.jpg"),
+  "moya": wmFile("Moya (Gran Canaria).jpg"),
+  "valleseco": wmFile("Valleseco iglesia de San Vicente Ferrer.jpg"),
+  "valsequillo": wmFile("Valsequillo de Gran Canaria.jpg"),
+  "san-mateo": wmFile("Vega de San Mateo.jpg"),
+  "santa-brigida": wmFile("Santa Brigida - iglesia.jpg"),
+  "ingenio": wmFile("Ingenio Las Palmas.jpg"),
+  "guia": wmFile("Santa María de Guía iglesia.jpg"),
+  "aldea-san-nicolas": wmFile("La Aldea de San Nicolás.jpg"),
+  "mogan-pueblo": wmFile("Mogán - Gran Canaria.jpg"),
+  "arinaga": wmFile("Arinaga.jpg"),
+  "tamaraceite": wmFile("Tamaraceite Las Palmas.jpg"),
+  "juncalillo": wmFile("Cave houses - Artenara - 01.jpg"),
+  "puerto-rico": wmFile("Puerto Rico (Gran Canaria).jpg"),
+  "vecindario": wmFile("Vecindario.jpg"),
+  "telde": wmFile("Telde Gran Canaria.jpg"),
+  "santa-lucia": wmFile("Santa Lucía de Tirajana.jpg"),
+
+  // Cultura (10)
+  "fortaleza-ansite": wmFile("Fortaleza de Ansite.jpg"),
+  "caam": wmFile("CAAM Las Palmas.jpg"),
+  "castillo-luz": wmFile("Castillo de la Luz Las Palmas.jpg"),
+  "auditorio-kraus": wmFile("Auditorio Alfredo Kraus.jpg"),
+  "casa-leon-castillo": wmFile("Casa-Museo León y Castillo.jpg"),
+  "iglesia-santiago-galdar": wmFile("Gáldar, en Gran Canaria (Las Palmas, España).jpg"),
+  "tumulo-guancha": wmFile("Tumulo de La Guancha.jpg"),
+  "casa-tomas-morales": wmFile("Moya (Gran Canaria).jpg"),
+  "parque-doramas": wmFile("Parque Doramas Las Palmas.jpg"),
+  "cueva-candiles": wmFile("Cave houses - Artenara - 01.jpg"),
+
+  // Restaurantes (10)
+  "bevir": wmFile("Columbus House-Vegueta-Las Palmas Gran Canaria.jpg"),
+  "pulperia-canarios": wmFile("Aerial view of the dunes and beach of Maspalomas, Canary Islands (52757630746).jpg"),
+  "la-aquarela": wmFile("Playa de Tauro.jpg"),
+  "muelle-arguineguin": wmFile("Puerto de Mogán (Gran Canaria) (Spain) - 52038215123.jpg"),
+  "texeda": wmFile("Gran Canaria, Caldera de Tejeda.jpg"),
+  "deliciosa-marta": wmFile("Columbus House-Vegueta-Las Palmas Gran Canaria.jpg"),
+  "caseron-galdar": wmFile("Gáldar, en Gran Canaria (Las Palmas, España).jpg"),
+  "cantina-firgas": wmFile("Firgas centrum - popular water town - panoramio.jpg"),
+  "cho-zacarias": wmFile("Iglesia de San Sebastián, en Agüimes (Las Palmas, España).jpg"),
+  "ribera-agaete": wmFile("Puerto de las Nieves - panoramio.jpg"),
+
+  // Casitas (6)
+  "casita-fontanales": wmFile("Fontanales - Gran Canaria.jpg"),
+  "casita-moya": wmFile("Moya (Gran Canaria).jpg"),
+  "casita-valleseco": wmFile("Valleseco iglesia de San Vicente Ferrer.jpg"),
+  "casita-santa-brigida": wmFile("Santa Brigida - iglesia.jpg"),
+  "casita-tejeda": wmFile("Gran Canaria, Caldera de Tejeda.jpg"),
+  "casita-firgas": wmFile("Firgas centrum - popular water town - panoramio.jpg"),
 };
+
+// Fallback genérico (foto de Gran Canaria que siempre funciona)
+const FALLBACK = wmFile("Gran Canaria, Caldera de Tejeda.jpg");
+
+const URLS = { ...CORE, ...EXTRA };
 
 function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
@@ -91,16 +153,13 @@ function sleep(ms) {
 
 async function downloadOne(slug, url, attempt = 1) {
   const outPath = path.join(OUT_DIR, `${slug}.jpg`);
-  // Skip if already present (idempotente)
   try {
     const s = await stat(outPath);
     if (s.size > 20_000) {
-      console.log(`⊙ ${slug} ya existe (${Math.round(s.size / 1024)}kb), saltando`);
+      console.log(`⊙ ${slug} cacheado (${Math.round(s.size / 1024)}kb)`);
       return { ok: true, cached: true };
     }
-  } catch {
-    // no existe, continúa
-  }
+  } catch {}
 
   try {
     const res = await fetch(url, {
@@ -108,23 +167,19 @@ async function downloadOne(slug, url, attempt = 1) {
       redirect: "follow",
     });
 
-    if (!res.ok) {
-      throw new Error(`HTTP ${res.status}`);
-    }
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
     const buf = Buffer.from(await res.arrayBuffer());
-    if (buf.length < 5000) {
-      throw new Error(`response too small (${buf.length} bytes) — likely error page`);
-    }
+    if (buf.length < 5000) throw new Error(`too small (${buf.length}b)`);
 
     await writeFile(outPath, buf);
     console.log(`✓ ${slug} (${Math.round(buf.length / 1024)}kb)`);
     return { ok: true };
   } catch (err) {
-    if (attempt === 1 && FALLBACKS[slug]) {
-      console.log(`⚠ ${slug} falló: ${err.message}. Reintentando con fallback...`);
+    if (attempt === 1) {
+      console.log(`⚠ ${slug}: ${err.message} → fallback`);
       await sleep(SLEEP_MS);
-      return downloadOne(slug, FALLBACKS[slug], 2);
+      return downloadOne(slug, FALLBACK, 2);
     }
     console.error(`✗ ${slug}: ${err.message}`);
     return { ok: false, error: err.message };
@@ -133,28 +188,19 @@ async function downloadOne(slug, url, attempt = 1) {
 
 async function main() {
   await mkdir(OUT_DIR, { recursive: true });
-
   const entries = Object.entries(URLS);
-  const results = { ok: 0, fail: 0, cached: 0 };
+  const res = { ok: 0, fail: 0, cached: 0 };
 
-  console.log(`📥 Descargando ${entries.length} imágenes a ${OUT_DIR}\n`);
+  console.log(`📥 ${entries.length} imágenes → ${OUT_DIR}\n`);
 
   for (const [slug, url] of entries) {
     const r = await downloadOne(slug, url);
-    if (r.ok) {
-      r.cached ? results.cached++ : results.ok++;
-    } else {
-      results.fail++;
-    }
+    if (r.ok) r.cached ? res.cached++ : res.ok++;
+    else res.fail++;
     await sleep(SLEEP_MS);
   }
 
-  console.log(
-    `\n📊 Resultado: ${results.ok} nuevas · ${results.cached} cacheadas · ${results.fail} fallidas`
-  );
+  console.log(`\n📊 ${res.ok} nuevas · ${res.cached} cacheadas · ${res.fail} fallidas`);
 }
 
-main().catch((e) => {
-  console.error("Fatal:", e);
-  process.exit(1);
-});
+main().catch((e) => { console.error("Fatal:", e); process.exit(1); });

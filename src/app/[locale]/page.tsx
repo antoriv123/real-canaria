@@ -1,6 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { ExploreSection } from "@/components/ExploreSection";
+import { SleepSection } from "@/components/SleepSection";
 import { SignupForm } from "@/components/auth/SignupForm";
 import { places } from "@/data/places";
 import Link from "next/link";
@@ -65,6 +66,9 @@ export default async function HomePage({
 
       {/* Mapa + Lista */}
       <ExploreSection places={places} />
+
+      {/* Dónde dormir (Casitas Canarias) */}
+      <SleepSection />
 
       {/* Signup */}
       <section id="signup" className="container-rc pt-16 pb-4 max-w-lg">
