@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "title": "Real Canaria — La Canaria que no sale en las guías",
+    "description": "Mapa con los mejores miradores, pueblos, museos y restaurantes de Gran Canaria. Curado por locales."
+  },
+  "nav": {
+    "explore": "Explorar",
+    "myPlan": "Mi plan",
+    "about": "Sobre nosotros"
+  },
+  "hero": {
+    "title": "No te quedes solo en la playa.",
+    "subtitle": "Descubre la Gran Canaria real — miradores, pueblos, museos y casas rurales. Curado por gente de aquí.",
+    "cta": "Ver el mapa",
+    "ctaSecondary": "¿Cuándo vienes?"
+  },
+  "filters": {
+    "all": "Todo",
+    "viewpoint": "Miradores",
+    "village": "Pueblos",
+    "museum": "Museos",
+    "restaurant": "Restaurantes",
+    "casita": "Casas rurales",
+    "showing": "{count, plural, =1 {1 sitio} other {# sitios}}"
+  },
+  "signup": {
+    "title": "Personaliza tu plan",
+    "subtitle": "Cuéntanos cuándo vienes y te recomendamos lo mejor para esos días.",
+    "name": "Tu nombre",
+    "namePlaceholder": "María",
+    "email": "Email",
+    "emailPlaceholder": "tu@email.com",
+    "visitDate": "¿Cuándo visitas la isla?",
+    "consent": "Acepto el tratamiento de mis datos según la política de privacidad.",
+    "submit": "Crear mi plan",
+    "submitting": "Creando plan...",
+    "success": "¡Listo! Tu plan está arriba.",
+    "errorEmail": "Email no válido",
+    "errorName": "Escribe tu nombre",
+    "errorDate": "Elige una fecha",
+    "errorConsent": "Necesitamos tu consentimiento"
+  },
+  "plan": {
+    "title": "Tu plan para Gran Canaria",
+    "subtitle": "{date, date, long}",
+    "greeting": "Hola {name}, esto es lo que te recomendamos:",
+    "emptyPlan": "Aún no hemos armado recomendaciones. Vuelve pronto."
+  },
+  "place": {
+    "tip": "Consejo local",
+    "directions": "Cómo llegar",
+    "website": "Web oficial",
+    "back": "Volver al mapa"
+  },
+  "footer": {
+    "tagline": "Un proyecto de Casitas Canarias — alquiler rural en Gran Canaria desde 2020.",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "casitas": "Visita Casitas Canarias"
+  },
+  "about": {
+    "title": "Sobre Real Canaria",
+    "body": "Real Canaria nace de Casitas Canarias, el negocio familiar de alquiler rural de Antonio. Vemos llegar turistas cada semana y vemos que muchos se pierden lo mejor de la isla. Esta app es la guía que nos gustaría darle a un amigo que viene por primera vez."
+  },
+  "privacy": {
+    "title": "Política de privacidad",
+    "lastUpdate": "Actualizado: 2026-04-20"
+  }
+}

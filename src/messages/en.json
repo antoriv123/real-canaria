@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "title": "Real Canaria — The Canaria that's not in the guidebooks",
+    "description": "A map of Gran Canaria's best viewpoints, villages, museums and restaurants. Curated by locals."
+  },
+  "nav": {
+    "explore": "Explore",
+    "myPlan": "My plan",
+    "about": "About"
+  },
+  "hero": {
+    "title": "Don't just lie on the beach.",
+    "subtitle": "Discover the real Gran Canaria — viewpoints, villages, museums and rural houses. Picked by people who live here.",
+    "cta": "Open the map",
+    "ctaSecondary": "When are you coming?"
+  },
+  "filters": {
+    "all": "All",
+    "viewpoint": "Viewpoints",
+    "village": "Villages",
+    "museum": "Museums",
+    "restaurant": "Restaurants",
+    "casita": "Rural houses",
+    "showing": "{count, plural, =1 {1 place} other {# places}}"
+  },
+  "signup": {
+    "title": "Personalize your plan",
+    "subtitle": "Tell us when you're coming and we'll recommend what fits those days.",
+    "name": "Your name",
+    "namePlaceholder": "Maria",
+    "email": "Email",
+    "emailPlaceholder": "you@email.com",
+    "visitDate": "When are you visiting?",
+    "consent": "I agree to the processing of my data per the privacy policy.",
+    "submit": "Create my plan",
+    "submitting": "Creating plan...",
+    "success": "Done! Your plan is above.",
+    "errorEmail": "Invalid email",
+    "errorName": "Please write your name",
+    "errorDate": "Pick a date",
+    "errorConsent": "We need your consent"
+  },
+  "plan": {
+    "title": "Your Gran Canaria plan",
+    "subtitle": "{date, date, long}",
+    "greeting": "Hi {name}, here's what we recommend:",
+    "emptyPlan": "No recommendations yet. Come back soon."
+  },
+  "place": {
+    "tip": "Local tip",
+    "directions": "How to get there",
+    "website": "Official website",
+    "back": "Back to map"
+  },
+  "footer": {
+    "tagline": "A project by Casitas Canarias — rural rentals in Gran Canaria since 2020.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "casitas": "Visit Casitas Canarias"
+  },
+  "about": {
+    "title": "About Real Canaria",
+    "body": "Real Canaria grew out of Casitas Canarias, Antonio's family rural rental business. Every week we see tourists arrive and miss the best of the island. This app is the guide we'd give to a friend visiting for the first time."
+  },
+  "privacy": {
+    "title": "Privacy policy",
+    "lastUpdate": "Updated: 2026-04-20"
+  }
+}

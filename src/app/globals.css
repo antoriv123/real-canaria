@@ -1,26 +1,100 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* === Paleta Real Canaria — copiada de casitascanarias.com === */
+  --color-bg: #FDFAF0;              /* crema muy suave */
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #E8E8DD;    /* --white de CC */
+  --color-ink: #393E47;              /* --text de CC */
+  --color-ink-muted: #6B7076;
+  --color-primary: #A22A1C;          /* --corporative (rojo terracota) */
+  --color-primary-hover: #8B2318;
+  --color-primary-soft: #F5E3DF;
+  --color-accent: #05715E;           /* --green (verde esmeralda) */
+  --color-accent-soft: #D5E8E4;
+  --color-warm: #E4AD13;             /* --yellow (mostaza dorado) */
+  --color-brown: #7D6B3D;            /* --brown (tierra) */
+  --color-border: #DAD7CA;
+  --color-success: #05715E;
+  --color-danger: #A22A1C;
+
+  /* Tipografía */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+
+  /* Radios */
+  --radius-sm: 0.375rem;
+  --radius: 0.625rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+* { box-sizing: border-box; }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@media (max-width: 640px) {
+  input, select, textarea { font-size: 16px !important; }
+}
+
+/* MapLibre overrides (compat mapboxgl-*) */
+.maplibregl-popup-content,
+.mapboxgl-popup-content {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px -8px rgba(57, 62, 71, 0.15);
+  padding: 0;
+}
+.maplibregl-popup-tip,
+.mapboxgl-popup-tip { border-top-color: var(--color-surface) !important; }
+.maplibregl-ctrl-group,
+.mapboxgl-ctrl-group {
+  border-radius: var(--radius) !important;
+  box-shadow: 0 2px 8px rgba(57, 62, 71, 0.08) !important;
+  overflow: hidden;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.stagger > * { animation: fade-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.stagger > *:nth-child(1) { animation-delay: 0ms; }
+.stagger > *:nth-child(2) { animation-delay: 60ms; }
+.stagger > *:nth-child(3) { animation-delay: 120ms; }
+.stagger > *:nth-child(4) { animation-delay: 180ms; }
+.stagger > *:nth-child(5) { animation-delay: 240ms; }
+
+.container-rc {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+@media (min-width: 640px) {
+  .container-rc { padding: 0 1.5rem; }
 }

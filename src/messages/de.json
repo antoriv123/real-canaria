@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "title": "Real Canaria — Das echte Gran Canaria, nicht aus dem Reiseführer",
+    "description": "Die besten Aussichtspunkte, Dörfer, Museen und Restaurants auf Gran Canaria. Kuratiert von Einheimischen."
+  },
+  "nav": {
+    "explore": "Entdecken",
+    "myPlan": "Mein Plan",
+    "about": "Über uns"
+  },
+  "hero": {
+    "title": "Bleib nicht nur am Strand.",
+    "subtitle": "Entdecke das echte Gran Canaria — Aussichtspunkte, Dörfer, Museen und Landhäuser. Ausgewählt von Menschen, die hier leben.",
+    "cta": "Karte öffnen",
+    "ctaSecondary": "Wann kommst du?"
+  },
+  "filters": {
+    "all": "Alles",
+    "viewpoint": "Aussichtspunkte",
+    "village": "Dörfer",
+    "museum": "Museen",
+    "restaurant": "Restaurants",
+    "casita": "Landhäuser",
+    "showing": "{count, plural, =1 {1 Ort} other {# Orte}}"
+  },
+  "signup": {
+    "title": "Personalisiere deinen Plan",
+    "subtitle": "Sag uns, wann du kommst, und wir empfehlen dir, was zu diesen Tagen passt.",
+    "name": "Dein Name",
+    "namePlaceholder": "Maria",
+    "email": "E-Mail",
+    "emailPlaceholder": "du@email.com",
+    "visitDate": "Wann besuchst du die Insel?",
+    "consent": "Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zu.",
+    "submit": "Meinen Plan erstellen",
+    "submitting": "Plan wird erstellt...",
+    "success": "Fertig! Dein Plan ist oben.",
+    "errorEmail": "Ungültige E-Mail",
+    "errorName": "Bitte schreibe deinen Namen",
+    "errorDate": "Wähle ein Datum",
+    "errorConsent": "Wir brauchen deine Zustimmung"
+  },
+  "plan": {
+    "title": "Dein Gran-Canaria-Plan",
+    "subtitle": "{date, date, long}",
+    "greeting": "Hallo {name}, das empfehlen wir dir:",
+    "emptyPlan": "Noch keine Empfehlungen. Komm bald wieder."
+  },
+  "place": {
+    "tip": "Tipp vom Einheimischen",
+    "directions": "Wegbeschreibung",
+    "website": "Offizielle Website",
+    "back": "Zurück zur Karte"
+  },
+  "footer": {
+    "tagline": "Ein Projekt von Casitas Canarias — Landhäuser auf Gran Canaria seit 2020.",
+    "privacy": "Datenschutz",
+    "terms": "AGB",
+    "casitas": "Casitas Canarias besuchen"
+  },
+  "about": {
+    "title": "Über Real Canaria",
+    "body": "Real Canaria entstand aus Casitas Canarias, dem Familienbetrieb für Landhäuser. Jede Woche sehen wir Touristen ankommen, die das Beste der Insel verpassen. Diese App ist der Reiseführer, den wir einem Freund zum ersten Besuch geben würden."
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "lastUpdate": "Aktualisiert: 2026-04-20"
+  }
+}

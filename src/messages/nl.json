@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "title": "Real Canaria — Het echte Gran Canaria, niet uit de reisgids",
+    "description": "Een kaart van de mooiste uitzichtpunten, dorpjes, musea en restaurants van Gran Canaria. Samengesteld door lokalen."
+  },
+  "nav": {
+    "explore": "Ontdekken",
+    "myPlan": "Mijn plan",
+    "about": "Over ons"
+  },
+  "hero": {
+    "title": "Blijf niet alleen op het strand.",
+    "subtitle": "Ontdek het echte Gran Canaria — uitzichtpunten, dorpjes, musea en landhuizen. Gekozen door mensen die hier wonen.",
+    "cta": "Kaart openen",
+    "ctaSecondary": "Wanneer kom je?"
+  },
+  "filters": {
+    "all": "Alles",
+    "viewpoint": "Uitzichtpunten",
+    "village": "Dorpjes",
+    "museum": "Musea",
+    "restaurant": "Restaurants",
+    "casita": "Landhuizen",
+    "showing": "{count, plural, =1 {1 plek} other {# plekken}}"
+  },
+  "signup": {
+    "title": "Maak jouw plan",
+    "subtitle": "Vertel ons wanneer je komt en we raden je aan wat past bij die dagen.",
+    "name": "Jouw naam",
+    "namePlaceholder": "Maria",
+    "email": "E-mail",
+    "emailPlaceholder": "jij@email.com",
+    "visitDate": "Wanneer bezoek je het eiland?",
+    "consent": "Ik ga akkoord met de verwerking van mijn gegevens volgens het privacybeleid.",
+    "submit": "Maak mijn plan",
+    "submitting": "Plan maken...",
+    "success": "Klaar! Jouw plan staat hierboven.",
+    "errorEmail": "Ongeldig e-mailadres",
+    "errorName": "Vul je naam in",
+    "errorDate": "Kies een datum",
+    "errorConsent": "We hebben je toestemming nodig"
+  },
+  "plan": {
+    "title": "Jouw Gran Canaria-plan",
+    "subtitle": "{date, date, long}",
+    "greeting": "Hoi {name}, dit raden we aan:",
+    "emptyPlan": "Nog geen aanbevelingen. Kom snel terug."
+  },
+  "place": {
+    "tip": "Lokale tip",
+    "directions": "Hoe kom je er",
+    "website": "Officiële website",
+    "back": "Terug naar kaart"
+  },
+  "footer": {
+    "tagline": "Een project van Casitas Canarias — landhuizen op Gran Canaria sinds 2020.",
+    "privacy": "Privacy",
+    "terms": "Voorwaarden",
+    "casitas": "Bezoek Casitas Canarias"
+  },
+  "about": {
+    "title": "Over Real Canaria",
+    "body": "Real Canaria komt voort uit Casitas Canarias, het familiebedrijf voor landhuizen. Elke week zien we toeristen die het beste van het eiland missen. Deze app is de gids die we aan een vriend zouden geven die voor het eerst komt."
+  },
+  "privacy": {
+    "title": "Privacybeleid",
+    "lastUpdate": "Bijgewerkt: 2026-04-20"
+  }
+}
