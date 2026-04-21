@@ -28,13 +28,14 @@ export default async function PrivacyPage({
   const t = await getTranslations("privacy");
 
   return (
-    <article className="container-rc py-12 max-w-2xl prose-sm">
-      <h1 className="font-[var(--font-display)] text-3xl font-bold text-[var(--color-ink)] mb-2">
-        {t("title")}
-      </h1>
-      <p className="text-xs text-[var(--color-ink-muted)] mb-6">{t("lastUpdate")}</p>
+    <article className="container-rc py-12 lg:py-16">
+      <div className="max-w-2xl lg:max-w-3xl">
+        <h1 className="font-[var(--font-display)] text-3xl lg:text-4xl font-bold text-[var(--color-ink)] mb-2">
+          {t("title")}
+        </h1>
+        <p className="text-xs text-[var(--color-ink-muted)] mb-6">{t("lastUpdate")}</p>
 
-      <div className="space-y-4 text-sm text-[var(--color-ink)] leading-relaxed">
+        <div className="space-y-4 text-sm lg:text-base text-[var(--color-ink)] leading-relaxed">
         <p>
           Real Canaria es un proyecto de Casitas Canarias. Recopilamos solo: tu nombre, email
           y la fecha de tu visita, exclusivamente para personalizarte las recomendaciones de
@@ -64,6 +65,7 @@ export default async function PrivacyPage({
           <strong>Conservación:</strong> eliminamos tus datos al año de tu última visita o
           cuando lo solicites, lo que ocurra antes.
         </p>
+        </div>
       </div>
     </article>
   );

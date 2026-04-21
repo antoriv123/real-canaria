@@ -156,9 +156,9 @@ export default async function PlacePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
-      <article className="container-rc py-6 sm:py-10 max-w-3xl">
+      <article className="container-rc py-6 sm:py-10 lg:py-12">
         {/* Breadcrumbs */}
-        <nav aria-label="Breadcrumb" className="text-xs text-[var(--color-ink-muted)] mb-3 flex gap-1 items-center">
+        <nav aria-label="Breadcrumb" className="text-xs text-[var(--color-ink-muted)] mb-3 flex gap-1 items-center max-w-5xl">
           <Link href={`/${locale}`} className="hover:text-[var(--color-primary)]">
             {tNav("explore")}
           </Link>
@@ -170,13 +170,14 @@ export default async function PlacePage({
 
         <Link
           href={`/${locale}`}
-          className="inline-flex items-center gap-1 text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-primary)] mb-4"
+          className="inline-flex items-center gap-1 text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-primary)] mb-5"
         >
           <ArrowLeft size={16} />
           {t("back")}
         </Link>
 
-        <div className="relative aspect-[16/9] w-full rounded-[var(--radius-lg)] overflow-hidden mb-6">
+        {/* Hero image — más panorámico en desktop */}
+        <div className="relative aspect-[16/9] lg:aspect-[21/9] w-full rounded-[var(--radius-lg)] overflow-hidden mb-8 lg:mb-10">
           <PlaceImage
             slug={place.slug}
             name={tr.name}
@@ -187,117 +188,200 @@ export default async function PlacePage({
           />
         </div>
 
-        <div className="text-xs uppercase tracking-wide text-[var(--color-primary)] font-semibold mb-2">
-          {place.category}
-        </div>
-        <h1 className="font-[var(--font-display)] text-3xl sm:text-4xl font-bold text-[var(--color-ink)] leading-tight mb-4">
-          {tr.name}
-        </h1>
-        <p className="text-lg text-[var(--color-ink-muted)] leading-relaxed mb-6">{tr.description}</p>
-
-        {/* Metadatos enriquecidos */}
-        {(place.openingHours || place.priceEur !== undefined || place.visitDurationMinutes || place.accessibility) && (
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6 p-4 rounded-[var(--radius)] bg-[var(--color-surface-muted)]">
-            {place.openingHours && (
-              <div>
-                <div className="flex items-center gap-1 text-[10px] uppercase tracking-wide text-[var(--color-ink-muted)] font-semibold mb-1">
-                  <Clock size={11} />
-                  {t("openingHours")}
-                </div>
-                <div className="text-sm">{place.openingHours}</div>
-              </div>
-            )}
-            {place.priceEur !== undefined && (
-              <div>
-                <div className="flex items-center gap-1 text-[10px] uppercase tracking-wide text-[var(--color-ink-muted)] font-semibold mb-1">
-                  <Euro size={11} />
-                  {t("price")}
-                </div>
-                <div className="text-sm">
-                  {place.priceEur === null ? t("priceFree") : `${place.priceEur}€`}
-                </div>
-              </div>
-            )}
-            {place.visitDurationMinutes && (
-              <div>
-                <div className="flex items-center gap-1 text-[10px] uppercase tracking-wide text-[var(--color-ink-muted)] font-semibold mb-1">
-                  <Clock size={11} />
-                  {t("visitDuration")}
-                </div>
-                <div className="text-sm">{formatDuration(place.visitDurationMinutes, t)}</div>
-              </div>
-            )}
-            {place.accessibility && (
-              <div>
-                <div className="flex items-center gap-1 text-[10px] uppercase tracking-wide text-[var(--color-ink-muted)] font-semibold mb-1">
-                  <TrendingUp size={11} />
-                  {t("accessibility")}
-                </div>
-                <div className="text-sm">
-                  {t(`access${place.accessibility.charAt(0).toUpperCase() + place.accessibility.slice(1)}`)}
-                </div>
-              </div>
-            )}
-          </div>
-        )}
-
-        {tr.tip && (
-          <div className="p-4 rounded-[var(--radius)] bg-[var(--color-accent-soft)] border border-[var(--color-accent)]/20 mb-6">
-            <div className="text-xs font-bold uppercase tracking-wide text-[var(--color-accent)] mb-1">
-              {t("tip")}
+        <div className="grid lg:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[minmax(0,1fr)_400px] gap-8 lg:gap-12">
+          {/* Columna principal */}
+          <div className="min-w-0">
+            <div className="text-xs uppercase tracking-wide text-[var(--color-primary)] font-semibold mb-2">
+              {place.category}
             </div>
-            <p className="text-sm text-[var(--color-ink)] leading-relaxed">{tr.tip}</p>
+            <h1 className="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-ink)] leading-tight mb-4">
+              {tr.name}
+            </h1>
+            <p className="text-lg lg:text-xl text-[var(--color-ink-muted)] leading-relaxed mb-6">{tr.description}</p>
+
+            {/* Metadatos enriquecidos */}
+            {(place.openingHours || place.priceEur !== undefined || place.visitDurationMinutes || place.accessibility) && (
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6 p-4 rounded-[var(--radius)] bg-[var(--color-surface-muted)]">
+                {place.openingHours && (
+                  <div>
+                    <div className="flex items-center gap-1 text-[10px] uppercase tracking-wide text-[var(--color-ink-muted)] font-semibold mb-1">
+                      <Clock size={11} />
+                      {t("openingHours")}
+                    </div>
+                    <div className="text-sm">{place.openingHours}</div>
+                  </div>
+                )}
+                {place.priceEur !== undefined && (
+                  <div>
+                    <div className="flex items-center gap-1 text-[10px] uppercase tracking-wide text-[var(--color-ink-muted)] font-semibold mb-1">
+                      <Euro size={11} />
+                      {t("price")}
+                    </div>
+                    <div className="text-sm">
+                      {place.priceEur === null ? t("priceFree") : `${place.priceEur}€`}
+                    </div>
+                  </div>
+                )}
+                {place.visitDurationMinutes && (
+                  <div>
+                    <div className="flex items-center gap-1 text-[10px] uppercase tracking-wide text-[var(--color-ink-muted)] font-semibold mb-1">
+                      <Clock size={11} />
+                      {t("visitDuration")}
+                    </div>
+                    <div className="text-sm">{formatDuration(place.visitDurationMinutes, t)}</div>
+                  </div>
+                )}
+                {place.accessibility && (
+                  <div>
+                    <div className="flex items-center gap-1 text-[10px] uppercase tracking-wide text-[var(--color-ink-muted)] font-semibold mb-1">
+                      <TrendingUp size={11} />
+                      {t("accessibility")}
+                    </div>
+                    <div className="text-sm">
+                      {t(`access${place.accessibility.charAt(0).toUpperCase() + place.accessibility.slice(1)}`)}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {tr.tip && (
+              <div className="p-4 lg:p-5 rounded-[var(--radius)] bg-[var(--color-accent-soft)] border border-[var(--color-accent)]/20 mb-6">
+                <div className="text-xs font-bold uppercase tracking-wide text-[var(--color-accent)] mb-1.5">
+                  {t("tip")}
+                </div>
+                <p className="text-sm lg:text-base text-[var(--color-ink)] leading-relaxed">{tr.tip}</p>
+              </div>
+            )}
+
+            {/* CTAs mobile — solo hasta lg, luego están en sidebar */}
+            <div className="lg:hidden">
+              <div className="flex flex-col sm:flex-row gap-2 mb-3">
+                {isActivity && affiliateUrl ? (
+                  <a
+                    href={affiliateUrl}
+                    target="_blank"
+                    rel="sponsored noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-[var(--radius)] bg-[var(--color-warm)] text-[#2A1E00] font-semibold text-sm hover:brightness-110 transition-all"
+                  >
+                    <Ticket size={16} />
+                    {t("bookOnCivitatis")}
+                  </a>
+                ) : null}
+                <a
+                  href={mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center justify-center gap-2 h-11 px-5 rounded-[var(--radius)] font-semibold text-sm ${
+                    isActivity && affiliateUrl
+                      ? "border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-ink)] hover:border-[var(--color-primary)]/40"
+                      : "bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-hover)]"
+                  }`}
+                >
+                  <MapPin size={16} />
+                  {t("directions")}
+                </a>
+                {place.externalUrl && !(isActivity && affiliateUrl) && (
+                  <a
+                    href={place.externalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-[var(--radius)] border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-ink)] font-semibold text-sm hover:border-[var(--color-primary)]/40"
+                  >
+                    <ExternalLink size={16} />
+                    {t("website")}
+                  </a>
+                )}
+                <AddToPlanButton slug={place.slug} />
+              </div>
+              {isActivity && affiliateUrl && isCivitatis && (
+                <p className="text-xs text-[var(--color-ink-muted)] mb-8">
+                  {t("affiliateDisclosure")}
+                </p>
+              )}
+              {!(isActivity && affiliateUrl && isCivitatis) && <div className="mb-5" />}
+            </div>
           </div>
-        )}
 
-        <div className="flex flex-col sm:flex-row gap-2 mb-3">
-          {isActivity && affiliateUrl ? (
-            <a
-              href={affiliateUrl}
-              target="_blank"
-              rel="sponsored noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-[var(--radius)] bg-[var(--color-warm)] text-[#2A1E00] font-semibold text-sm hover:brightness-110 transition-all"
-            >
-              <Ticket size={16} />
-              {t("bookOnCivitatis")}
-            </a>
-          ) : null}
-          <a
-            href={mapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`inline-flex items-center justify-center gap-2 h-11 px-5 rounded-[var(--radius)] font-semibold text-sm ${
-              isActivity && affiliateUrl
-                ? "border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-ink)] hover:border-[var(--color-primary)]/40"
-                : "bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-hover)]"
-            }`}
-          >
-            <MapPin size={16} />
-            {t("directions")}
-          </a>
-          {place.externalUrl && !(isActivity && affiliateUrl) && (
-            <a
-              href={place.externalUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-[var(--radius)] border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-ink)] font-semibold text-sm hover:border-[var(--color-primary)]/40"
-            >
-              <ExternalLink size={16} />
-              {t("website")}
-            </a>
-          )}
-          <AddToPlanButton slug={place.slug} />
+          {/* Sidebar sticky — solo lg+ */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-5">
+              {/* CTAs */}
+              <div className="p-5 rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-surface)] space-y-2">
+                {isActivity && affiliateUrl ? (
+                  <a
+                    href={affiliateUrl}
+                    target="_blank"
+                    rel="sponsored noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2 h-11 px-5 rounded-[var(--radius)] bg-[var(--color-warm)] text-[#2A1E00] font-semibold text-sm hover:brightness-110 transition-all"
+                  >
+                    <Ticket size={16} />
+                    {t("bookOnCivitatis")}
+                  </a>
+                ) : null}
+                <a
+                  href={mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-full inline-flex items-center justify-center gap-2 h-11 px-5 rounded-[var(--radius)] font-semibold text-sm ${
+                    isActivity && affiliateUrl
+                      ? "border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-ink)] hover:border-[var(--color-primary)]/40"
+                      : "bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-hover)]"
+                  }`}
+                >
+                  <MapPin size={16} />
+                  {t("directions")}
+                </a>
+                {place.externalUrl && !(isActivity && affiliateUrl) && (
+                  <a
+                    href={place.externalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2 h-11 px-5 rounded-[var(--radius)] border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-ink)] font-semibold text-sm hover:border-[var(--color-primary)]/40"
+                  >
+                    <ExternalLink size={16} />
+                    {t("website")}
+                  </a>
+                )}
+                <AddToPlanButton slug={place.slug} />
+                {isActivity && affiliateUrl && isCivitatis && (
+                  <p className="text-xs text-[var(--color-ink-muted)] pt-2">
+                    {t("affiliateDisclosure")}
+                  </p>
+                )}
+              </div>
+
+              {/* Casitas cerca (sticky card) */}
+              {!place.isCasita && casitasNearby.length > 0 && (
+                <div className="p-5 rounded-[var(--radius-lg)] bg-[var(--color-warm)]/10 border border-[var(--color-warm)]/30">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Bed size={16} className="text-[var(--color-warm)]" />
+                    <h2 className="font-[var(--font-display)] font-semibold text-base">{t("sleepHere")}</h2>
+                  </div>
+                  <div className="space-y-2">
+                    {casitasNearby.map((c) => {
+                      const ctr = c.translations[locale as Locale];
+                      return (
+                        <Link
+                          key={c.slug}
+                          href={`/${locale}/sitio/${c.slug}`}
+                          className="block bg-[var(--color-surface)] rounded-[var(--radius)] border border-[var(--color-border)] p-3 hover:border-[var(--color-warm)] transition-colors"
+                        >
+                          <p className="font-semibold text-sm">{ctr.name}</p>
+                          <p className="text-xs text-[var(--color-ink-muted)] line-clamp-2">{ctr.description}</p>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
+          </aside>
         </div>
-        {isActivity && affiliateUrl && isCivitatis && (
-          <p className="text-xs text-[var(--color-ink-muted)] mb-8">
-            {t("affiliateDisclosure")}
-          </p>
-        )}
-        {!(isActivity && affiliateUrl && isCivitatis) && <div className="mb-5" />}
 
-        {/* Dónde dormir cerca (casitas) */}
+        {/* Dónde dormir cerca (casitas) — mobile only (en desktop está en sidebar) */}
         {!place.isCasita && casitasNearby.length > 0 && (
-          <section className="mb-10 p-5 rounded-[var(--radius-lg)] bg-[var(--color-warm)]/10 border border-[var(--color-warm)]/30">
+          <section className="lg:hidden mb-10 p-5 rounded-[var(--radius-lg)] bg-[var(--color-warm)]/10 border border-[var(--color-warm)]/30">
             <div className="flex items-center gap-2 mb-3">
               <Bed size={16} className="text-[var(--color-warm)]" />
               <h2 className="font-[var(--font-display)] font-semibold text-lg">{t("sleepHere")}</h2>

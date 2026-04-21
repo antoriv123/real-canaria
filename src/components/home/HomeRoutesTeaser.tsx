@@ -36,7 +36,7 @@ export function HomeRoutesTeaser() {
           </Link>
         </div>
 
-        <ul className="grid sm:grid-cols-3 gap-4">
+        <ul className="grid sm:grid-cols-3 gap-4 lg:gap-5">
           {preview.map((r) => {
             const tr = r.translations[locale];
             return (

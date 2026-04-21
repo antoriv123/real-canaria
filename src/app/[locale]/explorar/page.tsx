@@ -35,13 +35,15 @@ export default async function ExplorarPage({
 
   return (
     <>
-      <header className="container-rc pt-8 sm:pt-12 pb-4">
-        <h1 className="font-[var(--font-display)] text-3xl sm:text-4xl font-bold text-[var(--color-ink)] mb-2">
-          {t("title")}
-        </h1>
-        <p className="text-lg text-[var(--color-ink-muted)] max-w-2xl">
-          {t("subtitle")}
-        </p>
+      <header className="container-rc pt-8 sm:pt-12 lg:pt-16 pb-4">
+        <div className="max-w-3xl">
+          <h1 className="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-ink)] mb-3 leading-tight">
+            {t("title")}
+          </h1>
+          <p className="text-lg lg:text-xl text-[var(--color-ink-muted)]">
+            {t("subtitle")}
+          </p>
+        </div>
       </header>
       <ExploreSection places={sites} />
       <CasitaCtaBlock variant="compact" campaign="explorar" />

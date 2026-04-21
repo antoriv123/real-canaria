@@ -28,38 +28,38 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-30 bg-[var(--color-bg)]/85 backdrop-blur-xl border-b border-[var(--color-border)]">
-      <div className="container-rc flex items-center justify-between h-16">
+      <div className="container-rc flex items-center justify-between h-16 lg:h-20">
         <Link href={`/${locale}`} className="flex items-baseline gap-0.5">
-          <span className="font-[var(--font-display)] font-bold text-xl tracking-tight text-[var(--color-ink)]">
+          <span className="font-[var(--font-display)] font-bold text-xl lg:text-2xl tracking-tight text-[var(--color-ink)]">
             Real
           </span>
-          <span className="font-[var(--font-display)] font-bold text-xl tracking-tight text-[var(--color-primary)]">
+          <span className="font-[var(--font-display)] font-bold text-xl lg:text-2xl tracking-tight text-[var(--color-primary)]">
             Canaria
           </span>
         </Link>
 
-        <nav className="flex items-center gap-1 sm:gap-2">
+        <nav className="flex items-center gap-1 sm:gap-2 lg:gap-3">
           <Link
             href={`/${locale}/explorar`}
-            className="hidden sm:inline-flex px-3 py-2 text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-primary)] rounded-[var(--radius)] transition-colors"
+            className="hidden sm:inline-flex px-3 lg:px-4 py-2 text-sm lg:text-[15px] font-medium text-[var(--color-ink)] hover:text-[var(--color-primary)] rounded-[var(--radius)] transition-colors"
           >
             {t("explore")}
           </Link>
           <Link
             href={`/${locale}/actividades`}
-            className="hidden md:inline-flex px-3 py-2 text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-primary)] rounded-[var(--radius)] transition-colors"
+            className="hidden md:inline-flex px-3 lg:px-4 py-2 text-sm lg:text-[15px] font-medium text-[var(--color-ink)] hover:text-[var(--color-primary)] rounded-[var(--radius)] transition-colors"
           >
             {t("activities")}
           </Link>
           <Link
             href={`/${locale}/rutas`}
-            className="hidden md:inline-flex px-3 py-2 text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-primary)] rounded-[var(--radius)] transition-colors"
+            className="hidden md:inline-flex px-3 lg:px-4 py-2 text-sm lg:text-[15px] font-medium text-[var(--color-ink)] hover:text-[var(--color-primary)] rounded-[var(--radius)] transition-colors"
           >
             {t("routes")}
           </Link>
           <Link
             href={`/${locale}/plan`}
-            className="hidden sm:inline-flex items-center gap-1 px-3 py-2 text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-primary)] rounded-[var(--radius)] transition-colors"
+            className="hidden sm:inline-flex items-center gap-1 px-3 lg:px-4 py-2 text-sm lg:text-[15px] font-medium text-[var(--color-ink)] hover:text-[var(--color-primary)] rounded-[var(--radius)] transition-colors"
           >
             {t("myPlan")}
             {favs.length > 0 && (
@@ -70,7 +70,7 @@ export function Navbar() {
           </Link>
           <Link
             href={`/${locale}/sobre`}
-            className="hidden lg:inline-flex px-3 py-2 text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-primary)] rounded-[var(--radius)] transition-colors"
+            className="hidden lg:inline-flex px-3 lg:px-4 py-2 text-sm lg:text-[15px] font-medium text-[var(--color-ink)] hover:text-[var(--color-primary)] rounded-[var(--radius)] transition-colors"
           >
             {t("about")}
           </Link>

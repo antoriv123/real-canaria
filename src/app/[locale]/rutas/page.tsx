@@ -34,13 +34,15 @@ export default async function RoutesPage({
 
   return (
     <>
-      <div className="container-rc py-10 max-w-4xl">
-        <h1 className="font-[var(--font-display)] text-3xl sm:text-4xl font-bold mb-2">
-          {t("title")}
-        </h1>
-        <p className="text-lg text-[var(--color-ink-muted)] mb-8">{t("subtitle")}</p>
+      <div className="container-rc py-10 lg:py-14">
+        <div className="max-w-3xl mb-10">
+          <h1 className="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-bold mb-3">
+            {t("title")}
+          </h1>
+          <p className="text-lg lg:text-xl text-[var(--color-ink-muted)]">{t("subtitle")}</p>
+        </div>
 
-        <div className="grid sm:grid-cols-2 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 lg:gap-5">
           {routes.map((r) => {
             const tr = r.translations[locale as Locale];
             return (

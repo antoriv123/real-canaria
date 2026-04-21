@@ -36,10 +36,15 @@
     "logout": "Cerrar sesión"
   },
   "hero": {
+    "eyebrow": "Gran Canaria · Curado por locales",
     "title": "No te quedes solo en la playa.",
     "subtitle": "Descubre la Gran Canaria real — miradores, pueblos, museos y casas rurales. Curado por gente de aquí.",
     "cta": "Ver el mapa",
-    "ctaSecondary": "¿Cuándo vienes?"
+    "ctaSecondary": "¿Cuándo vienes?",
+    "statsSites": "Sitios curados",
+    "statsActivities": "Actividades",
+    "statsRoutes": "Rutas de un día",
+    "statsLanguages": "Idiomas"
   },
   "filters": {
     "all": "Todo",

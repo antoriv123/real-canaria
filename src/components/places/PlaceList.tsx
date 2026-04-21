@@ -34,7 +34,7 @@ export function PlaceList({ places, onHover }: Props) {
   }
 
   return (
-    <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger">
+    <ul className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 lg:gap-5 stagger">
       {places.map((place) => {
         const Icon = ICONS[place.category] ?? MapPin;
         const t = place.translations[locale];

@@ -36,10 +36,15 @@
     "logout": "Abmelden"
   },
   "hero": {
+    "eyebrow": "Gran Canaria · Von Einheimischen kuratiert",
     "title": "Bleib nicht nur am Strand.",
     "subtitle": "Entdecke das echte Gran Canaria — Aussichtspunkte, Dörfer, Museen und Landhäuser. Ausgewählt von Menschen, die hier leben.",
     "cta": "Karte öffnen",
-    "ctaSecondary": "Wann kommst du?"
+    "ctaSecondary": "Wann kommst du?",
+    "statsSites": "Kuratierte Orte",
+    "statsActivities": "Aktivitäten",
+    "statsRoutes": "Tagesrouten",
+    "statsLanguages": "Sprachen"
   },
   "filters": {
     "all": "Alles",

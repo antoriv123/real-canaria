@@ -99,7 +99,7 @@ export default async function RouteDetailPage({
   };
 
   return (
-    <article className="container-rc py-6 sm:py-10 max-w-4xl">
+    <article className="container-rc py-6 sm:py-10 lg:py-14">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(tripLd) }}
@@ -110,39 +110,44 @@ export default async function RouteDetailPage({
       />
       <Link
         href={`/${locale}/rutas`}
-        className="inline-flex items-center gap-1 text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-primary)] mb-4"
+        className="inline-flex items-center gap-1 text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-primary)] mb-5"
       >
         <ArrowLeft size={16} />
         {t("title")}
       </Link>
 
-      <h1 className="font-[var(--font-display)] text-3xl sm:text-4xl font-bold mb-2">
-        {tr.name}
-      </h1>
-      <p className="text-lg text-[var(--color-ink-muted)] mb-4">{tr.description}</p>
+      <div className="max-w-4xl mb-10">
+        <h1 className="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 leading-tight">
+          {tr.name}
+        </h1>
+        <p className="text-lg lg:text-xl text-[var(--color-ink-muted)] mb-5">{tr.description}</p>
 
-      <div className="flex gap-4 text-sm text-[var(--color-ink-muted)] mb-6">
-        <span className="inline-flex items-center gap-1">
-          <Clock size={14} />
-          {t("durationLabel", { hours: route.durationHours })}
-        </span>
-        <span className="inline-flex items-center gap-1">
-          <RouteIcon size={14} />
-          {t("distanceLabel", { km: route.distanceKm })}
-        </span>
-      </div>
-
-      <div className="p-4 rounded-[var(--radius)] bg-[var(--color-accent-soft)] border border-[var(--color-accent)]/20 mb-8">
-        <div className="text-xs font-bold uppercase tracking-wide text-[var(--color-accent)] mb-1">
-          {tPlace("tip")}
+        <div className="flex flex-wrap gap-4 lg:gap-6 text-sm lg:text-base text-[var(--color-ink-muted)] mb-6">
+          <span className="inline-flex items-center gap-1.5">
+            <Clock size={16} />
+            {t("durationLabel", { hours: route.durationHours })}
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <RouteIcon size={16} />
+            {t("distanceLabel", { km: route.distanceKm })}
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            {stops.length} paradas
+          </span>
         </div>
-        <p className="text-sm">{tr.tips}</p>
+
+        <div className="p-4 lg:p-5 rounded-[var(--radius)] bg-[var(--color-accent-soft)] border border-[var(--color-accent)]/20">
+          <div className="text-xs font-bold uppercase tracking-wide text-[var(--color-accent)] mb-1.5">
+            {tPlace("tip")}
+          </div>
+          <p className="text-sm lg:text-base">{tr.tips}</p>
+        </div>
       </div>
 
-      <h2 className="font-[var(--font-display)] text-2xl font-bold mb-4">Paradas</h2>
-      <ol className="space-y-2 mb-8 list-decimal list-inside">
-        {stops.map((s, i) => (
-          <li key={s.slug} className="text-sm">
+      <h2 className="font-[var(--font-display)] text-2xl lg:text-3xl font-bold mb-4">Paradas</h2>
+      <ol className="space-y-2 mb-8 list-decimal list-inside max-w-3xl">
+        {stops.map((s) => (
+          <li key={s.slug} className="text-sm lg:text-base">
             <Link
               href={`/${locale}/sitio/${s.slug}`}
               className="font-medium hover:text-[var(--color-primary)]"

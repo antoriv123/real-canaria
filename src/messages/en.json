@@ -36,10 +36,15 @@
     "logout": "Log out"
   },
   "hero": {
+    "eyebrow": "Gran Canaria · Curated by locals",
     "title": "Don't just lie on the beach.",
     "subtitle": "Discover the real Gran Canaria — viewpoints, villages, museums and rural houses. Picked by people who live here.",
     "cta": "Open the map",
-    "ctaSecondary": "When are you coming?"
+    "ctaSecondary": "When are you coming?",
+    "statsSites": "Curated spots",
+    "statsActivities": "Activities",
+    "statsRoutes": "Day routes",
+    "statsLanguages": "Languages"
   },
   "filters": {
     "all": "All",

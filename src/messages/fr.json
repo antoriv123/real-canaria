@@ -36,10 +36,15 @@
     "logout": "Déconnexion"
   },
   "hero": {
+    "eyebrow": "Gran Canaria · Sélectionné par des locaux",
     "title": "Ne reste pas que sur la plage.",
     "subtitle": "Découvre la vraie Gran Canaria — points de vue, villages, musées et maisons rurales. Choisis par ceux qui y vivent.",
     "cta": "Ouvrir la carte",
-    "ctaSecondary": "Tu viens quand ?"
+    "ctaSecondary": "Tu viens quand ?",
+    "statsSites": "Lieux sélectionnés",
+    "statsActivities": "Activités",
+    "statsRoutes": "Itinéraires",
+    "statsLanguages": "Langues"
   },
   "filters": {
     "all": "Tout",

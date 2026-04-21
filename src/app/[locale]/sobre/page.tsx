@@ -30,11 +30,15 @@ export default async function AboutPage({
 
   return (
     <>
-      <article className="container-rc py-12 max-w-2xl">
-        <h1 className="font-[var(--font-display)] text-3xl sm:text-4xl font-bold text-[var(--color-ink)] mb-6">
-          {t("title")}
-        </h1>
-        <p className="text-lg text-[var(--color-ink-muted)] leading-relaxed">{t("body")}</p>
+      <article className="container-rc py-12 lg:py-20">
+        <div className="max-w-3xl">
+          <h1 className="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-ink)] mb-6 leading-tight">
+            {t("title")}
+          </h1>
+          <p className="text-lg lg:text-xl text-[var(--color-ink-muted)] leading-relaxed">
+            {t("body")}
+          </p>
+        </div>
       </article>
       <CasitaCtaBlock variant="full" campaign="sobre" />
     </>

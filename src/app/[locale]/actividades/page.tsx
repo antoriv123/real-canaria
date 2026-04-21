@@ -36,27 +36,29 @@ export default async function ActividadesPage({
 
   return (
     <>
-      <header className="container-rc pt-8 sm:pt-12 pb-6">
-        <div className="flex items-center gap-2 mb-2 text-[var(--color-warm)]">
-          <Ticket size={18} />
-          <span className="text-xs font-bold uppercase tracking-wide">
-            {t("eyebrow")}
-          </span>
-        </div>
-        <h1 className="font-[var(--font-display)] text-3xl sm:text-4xl font-bold text-[var(--color-ink)] mb-2">
-          {t("title")}
-        </h1>
-        <p className="text-lg text-[var(--color-ink-muted)] max-w-2xl">
-          {t("subtitle")}
-        </p>
-        <div className="mt-4 flex items-start gap-2 text-xs text-[var(--color-ink-muted)] bg-[var(--color-surface-muted)] border border-[var(--color-border)] rounded-[var(--radius)] px-3 py-2 max-w-2xl">
-          <Info size={14} className="shrink-0 mt-0.5" />
-          <span>{t("affiliateNotice")}</span>
+      <header className="container-rc pt-8 sm:pt-12 lg:pt-16 pb-6">
+        <div className="max-w-3xl">
+          <div className="flex items-center gap-2 mb-3 text-[var(--color-warm)]">
+            <Ticket size={18} />
+            <span className="text-xs font-bold uppercase tracking-[0.14em]">
+              {t("eyebrow")}
+            </span>
+          </div>
+          <h1 className="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-ink)] mb-3 leading-tight">
+            {t("title")}
+          </h1>
+          <p className="text-lg lg:text-xl text-[var(--color-ink-muted)]">
+            {t("subtitle")}
+          </p>
+          <div className="mt-5 flex items-start gap-2 text-xs lg:text-sm text-[var(--color-ink-muted)] bg-[var(--color-surface-muted)] border border-[var(--color-border)] rounded-[var(--radius)] px-3 py-2.5 lg:px-4 lg:py-3">
+            <Info size={14} className="shrink-0 mt-0.5" />
+            <span>{t("affiliateNotice")}</span>
+          </div>
         </div>
       </header>
 
       <section className="container-rc pb-12">
-        <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger">
+        <ul className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-5 stagger">
           {activities.map((place) => {
             const tr = place.translations[locale as Locale];
             return (

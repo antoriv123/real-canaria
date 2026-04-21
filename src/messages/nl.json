@@ -36,10 +36,15 @@
     "logout": "Uitloggen"
   },
   "hero": {
+    "eyebrow": "Gran Canaria · Samengesteld door lokalen",
     "title": "Blijf niet alleen op het strand.",
     "subtitle": "Ontdek het echte Gran Canaria — uitzichtpunten, dorpjes, musea en landhuizen. Gekozen door mensen die hier wonen.",
     "cta": "Kaart openen",
-    "ctaSecondary": "Wanneer kom je?"
+    "ctaSecondary": "Wanneer kom je?",
+    "statsSites": "Plekken",
+    "statsActivities": "Activiteiten",
+    "statsRoutes": "Dagroutes",
+    "statsLanguages": "Talen"
   },
   "filters": {
     "all": "Alles",

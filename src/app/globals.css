@@ -91,10 +91,27 @@ body {
 
 .container-rc {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 @media (min-width: 640px) {
   .container-rc { padding: 0 1.5rem; }
+}
+@media (min-width: 1024px) {
+  .container-rc { padding: 0 2.5rem; }
+}
+@media (min-width: 1536px) {
+  .container-rc { padding: 0 3.5rem; }
+}
+
+/* Container variant más estrecho para lectura (artículos, políticas, sobre) */
+.container-read {
+  width: 100%;
+  max-width: 72ch;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+@media (min-width: 640px) {
+  .container-read { padding: 0 1.5rem; }
 }

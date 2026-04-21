@@ -36,10 +36,15 @@
     "logout": "Esci"
   },
   "hero": {
+    "eyebrow": "Gran Canaria · Selezionato da chi ci vive",
     "title": "Non fermarti in spiaggia.",
     "subtitle": "Scopri la vera Gran Canaria — belvedere, paesi, musei e case rurali. Scelti da chi vive qui.",
     "cta": "Apri la mappa",
-    "ctaSecondary": "Quando arrivi?"
+    "ctaSecondary": "Quando arrivi?",
+    "statsSites": "Posti selezionati",
+    "statsActivities": "Attività",
+    "statsRoutes": "Itinerari",
+    "statsLanguages": "Lingue"
   },
   "filters": {
     "all": "Tutto",

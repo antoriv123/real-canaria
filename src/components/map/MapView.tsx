@@ -175,7 +175,7 @@ export function MapView({ places, highlight }: Props) {
 
   if (error) {
     return (
-      <div className="aspect-[4/3] sm:aspect-[16/9] w-full rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-surface-muted)] flex items-center justify-center text-center p-8">
+      <div className="aspect-[4/3] sm:aspect-[16/9] lg:aspect-[2/1] xl:aspect-[21/9] w-full lg:max-h-[640px] rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-surface-muted)] flex items-center justify-center text-center p-8">
         <p className="text-sm text-[var(--color-ink-muted)]">Map error: {error}</p>
       </div>
     );
@@ -184,7 +184,7 @@ export function MapView({ places, highlight }: Props) {
   return (
     <div
       ref={containerRef}
-      className="aspect-[4/3] sm:aspect-[16/9] w-full rounded-[var(--radius-lg)] overflow-hidden border border-[var(--color-border)] bg-[var(--color-surface-muted)]"
+      className="aspect-[4/3] sm:aspect-[16/9] lg:aspect-[2/1] xl:aspect-[21/9] w-full lg:max-h-[640px] rounded-[var(--radius-lg)] overflow-hidden border border-[var(--color-border)] bg-[var(--color-surface-muted)]"
     />
   );
 }
