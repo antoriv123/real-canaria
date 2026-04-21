@@ -15,6 +15,7 @@ export const placesActivities: Place[] = [
     island: "gran-canaria",
     lat: 27.7623, lng: -15.5827,
     imageUrl: "",
+    featured: true,
     externalUrl: "https://www.civitatis.com/es/gran-canaria/paseo-camello-dunas-maspalomas/",
     visitDurationMinutes: 40,
     translations: {
@@ -32,6 +33,7 @@ export const placesActivities: Place[] = [
     island: "gran-canaria",
     lat: 27.7667, lng: -15.7042,
     imageUrl: "",
+    featured: true,
     externalUrl: "https://www.civitatis.com/es/gran-canaria/paseo-catamaran-anfi-mar/",
     visitDurationMinutes: 180,
     translations: {
@@ -49,6 +51,7 @@ export const placesActivities: Place[] = [
     island: "gran-canaria",
     lat: 27.7855, lng: -15.7131,
     imageUrl: "",
+    featured: true,
     externalUrl: "https://www.civitatis.com/es/gran-canaria/avistamiento-delfines-ballenas/",
     visitDurationMinutes: 120,
     translations: {
@@ -66,6 +69,7 @@ export const placesActivities: Place[] = [
     island: "gran-canaria",
     lat: 27.9689, lng: -15.6147,
     imageUrl: "",
+    featured: true,
     externalUrl: "https://www.civitatis.com/es/gran-canaria/excursion-roque-nublo/",
     visitDurationMinutes: 420,
     translations: {

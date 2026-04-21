@@ -29,6 +29,7 @@
   },
   "nav": {
     "explore": "Explorer",
+    "activities": "Activités",
     "myPlan": "Mon plan",
     "routes": "Itinéraires",
     "about": "À propos",
@@ -120,6 +121,31 @@
       "compactSubtitle": "Nos maisons rurales sont à deux pas de tout ce que tu vois ici.",
       "cta": "Voir les maisons"
     }
+  },
+  "activities": {
+    "eyebrow": "Civitatis",
+    "title": "Activités et excursions à Gran Canaria",
+    "subtitle": "Des expériences qu'on n'improvise pas — catamaran, rando guidée, kayak dans les grottes, parcs. Les 12 plus réservées.",
+    "affiliateNotice": "Les liens Civitatis sont affiliés : tu réserves au même prix, on touche une petite commission qui nous aide à garder ce guide gratuit.",
+    "tag": "Activité",
+    "seeDetails": "Voir les détails"
+  },
+  "explore": {
+    "title": "Explorer Gran Canaria",
+    "subtitle": "Tous les lieux sélectionnés : points de vue, villages, musées, restaurants et maisons rurales. Filtre ou cherche.",
+    "metaTitle": "Explorer Gran Canaria — tous les lieux sélectionnés",
+    "metaDescription": "Carte et liste complète des meilleurs points de vue, villages, musées et restaurants. Filtrable par type."
+  },
+  "home": {
+    "highlightsTitle": "L'essentiel",
+    "highlightsSubtitle": "Les lieux à ne pas manquer à Gran Canaria.",
+    "seeAllPlaces": "Voir tous les lieux",
+    "activitiesTitle": "Activités et excursions",
+    "activitiesSubtitle": "Les expériences les plus réservées de l'île. Partenaire Civitatis.",
+    "seeAllActivities": "Voir toutes les activités",
+    "routesTitle": "Itinéraires d'un jour",
+    "routesSubtitle": "Programmes prêts si tu ne sais pas par où commencer.",
+    "seeAllRoutes": "Voir tous les itinéraires"
   },
   "notFound": {
     "title": "Page introuvable",

@@ -40,10 +40,16 @@ export function Navbar() {
 
         <nav className="flex items-center gap-1 sm:gap-2">
           <Link
-            href={`/${locale}#map`}
+            href={`/${locale}/explorar`}
             className="hidden sm:inline-flex px-3 py-2 text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-primary)] rounded-[var(--radius)] transition-colors"
           >
             {t("explore")}
+          </Link>
+          <Link
+            href={`/${locale}/actividades`}
+            className="hidden md:inline-flex px-3 py-2 text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-primary)] rounded-[var(--radius)] transition-colors"
+          >
+            {t("activities")}
           </Link>
           <Link
             href={`/${locale}/rutas`}

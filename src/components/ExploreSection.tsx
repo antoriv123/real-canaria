@@ -46,32 +46,30 @@ export function ExploreSection({ places }: Props) {
   }, [places, category, search, locale]);
 
   return (
-    <div className="bg-[var(--color-surface)] border-t border-[var(--color-border)]">
-      <section id="map" className="container-rc pt-10 sm:pt-14 pb-12 sm:pb-16">
-        <PlaceFilters
-          active={category}
-          onChange={setCategory}
-          counts={counts}
-          search={search}
-          onSearchChange={setSearch}
-        />
+    <section id="map" className="container-rc pt-6 sm:pt-8 pb-12 sm:pb-16">
+      <PlaceFilters
+        active={category}
+        onChange={setCategory}
+        counts={counts}
+        search={search}
+        onSearchChange={setSearch}
+      />
 
-        <p className="text-sm text-[var(--color-ink-muted)] mt-3 mb-4">
-          {t("showing", { count: filtered.length })}
-        </p>
+      <p className="text-sm text-[var(--color-ink-muted)] mt-3 mb-4">
+        {t("showing", { count: filtered.length })}
+      </p>
 
-        <div className="mb-8 fade-up">
-          <MapView places={filtered} highlight={hover} />
+      <div className="mb-8 fade-up">
+        <MapView places={filtered} highlight={hover} />
+      </div>
+
+      {filtered.length === 0 ? (
+        <div className="p-12 text-center text-[var(--color-ink-muted)]">
+          {t("noResults")}
         </div>
-
-        {filtered.length === 0 ? (
-          <div className="p-12 text-center text-[var(--color-ink-muted)]">
-            {t("noResults")}
-          </div>
-        ) : (
-          <PlaceList places={filtered} onHover={setHover} />
-        )}
-      </section>
-    </div>
+      ) : (
+        <PlaceList places={filtered} onHover={setHover} />
+      )}
+    </section>
   );
 }

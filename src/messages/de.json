@@ -29,6 +29,7 @@
   },
   "nav": {
     "explore": "Entdecken",
+    "activities": "Aktivitäten",
     "myPlan": "Mein Plan",
     "routes": "Routen",
     "about": "Über uns",
@@ -120,6 +121,31 @@
       "compactSubtitle": "Unsere Landhäuser liegen direkt um die Ecke von allem, was du hier siehst.",
       "cta": "Landhäuser ansehen"
     }
+  },
+  "activities": {
+    "eyebrow": "Civitatis",
+    "title": "Aktivitäten & Ausflüge auf Gran Canaria",
+    "subtitle": "Erlebnisse, die du nicht improvisieren kannst — Katamaran, geführte Wanderungen, Kajak in Höhlen, Parks. Die 12 meistgebuchten.",
+    "affiliateNotice": "Die Civitatis-Links sind Affiliate-Links: du buchst zum gleichen Preis, wir bekommen eine kleine Provision — hilft, den Guide kostenlos zu halten.",
+    "tag": "Aktivität",
+    "seeDetails": "Details ansehen"
+  },
+  "explore": {
+    "title": "Gran Canaria erkunden",
+    "subtitle": "Jeder kuratierte Ort: Aussichtspunkte, Dörfer, Museen, Restaurants und Landhäuser. Filtern oder durchsuchen.",
+    "metaTitle": "Gran Canaria erkunden — alle kuratierten Orte",
+    "metaDescription": "Vollständige Karte und Liste der besten Aussichtspunkte, Dörfer, Museen und Restaurants. Nach Typ filterbar."
+  },
+  "home": {
+    "highlightsTitle": "Das Wesentliche",
+    "highlightsSubtitle": "Die Orte, die du auf Gran Canaria nicht verpassen darfst.",
+    "seeAllPlaces": "Alle Orte sehen",
+    "activitiesTitle": "Aktivitäten & Ausflüge",
+    "activitiesSubtitle": "Die meistgebuchten Erlebnisse der Insel. Civitatis-Partner.",
+    "seeAllActivities": "Alle Aktivitäten sehen",
+    "routesTitle": "Tagesrouten",
+    "routesSubtitle": "Fertige Tagesprogramme, wenn du nicht weißt wo anfangen.",
+    "seeAllRoutes": "Alle Routen sehen"
   },
   "notFound": {
     "title": "Seite nicht gefunden",

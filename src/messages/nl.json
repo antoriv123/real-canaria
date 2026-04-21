@@ -29,6 +29,7 @@
   },
   "nav": {
     "explore": "Ontdekken",
+    "activities": "Activiteiten",
     "myPlan": "Mijn plan",
     "routes": "Routes",
     "about": "Over ons",
@@ -120,6 +121,31 @@
       "compactSubtitle": "Onze landhuizen liggen vlak bij alles wat je hier ziet.",
       "cta": "Landhuizen bekijken"
     }
+  },
+  "activities": {
+    "eyebrow": "Civitatis",
+    "title": "Activiteiten en excursies op Gran Canaria",
+    "subtitle": "Ervaringen die je niet kunt improviseren — catamaran, begeleide wandelingen, kajakken in grotten, parken. De 12 meest geboekte.",
+    "affiliateNotice": "Civitatis-links zijn affiliate: jij boekt voor dezelfde prijs, wij krijgen een kleine commissie waarmee we deze gids gratis houden.",
+    "tag": "Activiteit",
+    "seeDetails": "Details bekijken"
+  },
+  "explore": {
+    "title": "Gran Canaria verkennen",
+    "subtitle": "Alle samengestelde plekken: uitzichtpunten, dorpjes, musea, restaurants en landhuizen. Filter of zoek.",
+    "metaTitle": "Gran Canaria verkennen — alle samengestelde plekken",
+    "metaDescription": "Volledige kaart en lijst van de beste uitzichtpunten, dorpjes, musea en restaurants. Filter op type."
+  },
+  "home": {
+    "highlightsTitle": "Het belangrijkste",
+    "highlightsSubtitle": "De plekken die je op Gran Canaria niet mag missen.",
+    "seeAllPlaces": "Alle plekken zien",
+    "activitiesTitle": "Activiteiten en excursies",
+    "activitiesSubtitle": "De meest geboekte ervaringen op het eiland. Civitatis-partner.",
+    "seeAllActivities": "Alle activiteiten zien",
+    "routesTitle": "Dagroutes",
+    "routesSubtitle": "Kant-en-klare dagprogramma's als je niet weet waar te beginnen.",
+    "seeAllRoutes": "Alle routes zien"
   },
   "notFound": {
     "title": "Pagina niet gevonden",

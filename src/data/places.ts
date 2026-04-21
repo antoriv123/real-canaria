@@ -145,7 +145,7 @@ const placesCore: Place[] = [
     category: "viewpoint",
     island: "gran-canaria",
     lat: 27.8940, lng: -15.4730,
-    imageUrl: "",
+    imageUrl: "", featured: true,
     translations: {
       es: { name: "Barranco de Guayadeque", description: "Garganta volcánica con casas-cueva aborígenes habitadas hasta hoy. La iglesia está excavada en la roca. Sensación del siglo XV.", tip: "Come en el Tagoror, restaurante-cueva al final del barranco. Reserva, hay lista de espera." },
       en: { name: "Guayadeque Ravine", description: "Volcanic gorge with aboriginal cave-houses still inhabited today. The church is carved into the rock. Feels like the 15th century.", tip: "Eat at Tagoror, a cave-restaurant at the end of the ravine. Book ahead — there's a waiting list." },
@@ -207,7 +207,7 @@ const placesCore: Place[] = [
     category: "village",
     island: "gran-canaria",
     lat: 28.0574, lng: -15.5461,
-    imageUrl: "",
+    imageUrl: "", featured: true,
     translations: {
       es: { name: "Teror", description: "El pueblo más bonito de Gran Canaria. Balcones de madera canaria tallados, Basílica del Pino y mercadillo dominical.", tip: "Domingo por la mañana. Desayuna chorizo de Teror y café en la plaza. Llévate agua de Teror." },
       en: { name: "Teror", description: "Gran Canaria's prettiest village. Carved Canarian wooden balconies, Basilica of the Pine, and a legendary Sunday market.", tip: "Go Sunday morning. Breakfast = Teror chorizo + coffee on the square. Bring back Teror water." },
@@ -222,7 +222,7 @@ const placesCore: Place[] = [
     category: "village",
     island: "gran-canaria",
     lat: 27.9933, lng: -15.6167,
-    imageUrl: "",
+    imageUrl: "", featured: true,
     translations: {
       es: { name: "Tejeda", description: "Pueblo a 1.050 m dentro del cráter volcánico de la isla. Almendros, dulces de mazapán y vistas marcianas.", tip: "Febrero = flor del almendro. Prueba 'bienmesabe' (postre de almendra) en Dulcería Nublo." },
       en: { name: "Tejeda", description: "Mountain village at 1,050 m, inside the island's volcanic crater. Almond trees, marzipan and Martian views.", tip: "February = almond blossom. Try 'bienmesabe' (almond dessert) at Dulcería Nublo." },
@@ -237,7 +237,7 @@ const placesCore: Place[] = [
     category: "village",
     island: "gran-canaria",
     lat: 28.1000, lng: -15.7000,
-    imageUrl: "",
+    imageUrl: "", featured: true,
     translations: {
       es: { name: "Agaete — Puerto de las Nieves", description: "Pueblo pesquero al noroeste con piscinas naturales y el mejor pescado de la isla. Valle de Agaete = único café de Europa.", tip: "Pescado en Las Nasas. Pide 'vieja sancochada'. Sube al Valle y visita una finca de café." },
       en: { name: "Agaete — Puerto de las Nieves", description: "Northwest fishing village with natural pools and the island's best seafood. Agaete Valley = Europe's only coffee region.", tip: "Seafood at Las Nasas. Order 'vieja sancochada'. Drive up the Valley for a coffee farm visit." },
@@ -344,7 +344,7 @@ const placesCore: Place[] = [
     category: "museum",
     island: "gran-canaria",
     lat: 28.0672, lng: -15.4683,
-    imageUrl: "",
+    imageUrl: "", featured: true,
     externalUrl: "https://www.jardincanario.org",
     translations: {
       es: { name: "Jardín Botánico Canario", description: "27 hectáreas con toda la flora endémica de Macaronesia. Laurisilva, cactus, palmeras canarias y paseo sombreado por un barranco.", tip: "Entrada gratis. Temprano, cierra a las 18h. Empieza por la entrada de abajo (menos turistas)." },
@@ -391,7 +391,7 @@ const placesCore: Place[] = [
     category: "museum",
     island: "gran-canaria",
     lat: 28.1444, lng: -15.6497,
-    imageUrl: "",
+    imageUrl: "", featured: true,
     translations: {
       es: { name: "Cueva Pintada (Gáldar)", description: "Yacimiento arqueológico con pinturas geométricas aborígenes (entre las más importantes de Canarias). Visita guiada obligatoria.", tip: "Reserva con días. 6€, dura 1h. Imprescindible si te interesa la historia pre-Castilla." },
       en: { name: "Painted Cave (Gáldar)", description: "Archaeological site with geometric aboriginal paintings — among the most important in the Canaries. Guided tour required.", tip: "Book days ahead. €6, 1h long. A must if you care about pre-Spanish history." },
@@ -438,7 +438,7 @@ const placesCore: Place[] = [
     category: "restaurant",
     island: "gran-canaria",
     lat: 27.8830, lng: -15.4665,
-    imageUrl: "",
+    imageUrl: "", featured: true,
     translations: {
       es: { name: "Restaurante Tagoror", description: "Restaurante-cueva al final del Barranco de Guayadeque. Cocina canaria clásica en un comedor excavado en la roca.", tip: "Reserva con días. Pide cabrito, papas arrugadas y mojo. No hay menú vegetariano fuerte." },
       en: { name: "Restaurante Tagoror", description: "Cave-restaurant at the end of Guayadeque Ravine. Classic Canarian cuisine in a dining room carved into the rock.", tip: "Book days ahead. Order goat, wrinkled potatoes and mojo. Limited vegetarian options." },
@@ -515,7 +515,7 @@ const placesCore: Place[] = [
     category: "casita",
     island: "gran-canaria",
     lat: 28.0450, lng: -15.5500,
-    imageUrl: "",
+    imageUrl: "", featured: true,
     externalUrl: "https://casitascanarias.com",
     isCasita: true,
     translations: {

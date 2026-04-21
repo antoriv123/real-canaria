@@ -8,7 +8,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
   // Home + páginas fijas por idioma
-  const staticPaths = ["", "/rutas", "/plan", "/sobre", "/privacidad"];
+  const staticPaths = [
+    "",
+    "/explorar",
+    "/actividades",
+    "/rutas",
+    "/plan",
+    "/sobre",
+    "/privacidad",
+  ];
   for (const locale of routing.locales) {
     for (const path of staticPaths) {
       entries.push({

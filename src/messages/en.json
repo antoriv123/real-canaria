@@ -29,6 +29,7 @@
   },
   "nav": {
     "explore": "Explore",
+    "activities": "Activities",
     "myPlan": "My plan",
     "routes": "Routes",
     "about": "About",
@@ -120,6 +121,31 @@
       "compactSubtitle": "Our rural houses sit a step away from everything you'll see here.",
       "cta": "See our houses"
     }
+  },
+  "activities": {
+    "eyebrow": "Civitatis",
+    "title": "Things to do in Gran Canaria",
+    "subtitle": "The experiences you can't wing — catamaran, guided hikes, cave kayaking, parks. The 12 most-booked on the island.",
+    "affiliateNotice": "Civitatis links are affiliate: you book at the same price, we earn a small commission that helps keep this guide free.",
+    "tag": "Activity",
+    "seeDetails": "See details"
+  },
+  "explore": {
+    "title": "Explore Gran Canaria",
+    "subtitle": "Every curated spot: viewpoints, villages, museums, restaurants and rural houses. Filter by type or search by name.",
+    "metaTitle": "Explore Gran Canaria — every curated spot",
+    "metaDescription": "Full map and list of Gran Canaria's best viewpoints, villages, museums and restaurants. Filter by type."
+  },
+  "home": {
+    "highlightsTitle": "The essentials",
+    "highlightsSubtitle": "The spots you can't miss in Gran Canaria.",
+    "seeAllPlaces": "See every spot",
+    "activitiesTitle": "Things to do",
+    "activitiesSubtitle": "The most-booked experiences on the island. Civitatis affiliate.",
+    "seeAllActivities": "See every activity",
+    "routesTitle": "One-day routes",
+    "routesSubtitle": "Full itineraries if you don't know where to start.",
+    "seeAllRoutes": "See every route"
   },
   "notFound": {
     "title": "Page not found",

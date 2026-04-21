@@ -1,6 +1,8 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
-import { ExploreSection } from "@/components/ExploreSection";
+import { HomeHighlights } from "@/components/home/HomeHighlights";
+import { HomeActivitiesTeaser } from "@/components/home/HomeActivitiesTeaser";
+import { HomeRoutesTeaser } from "@/components/home/HomeRoutesTeaser";
 import { SleepSection } from "@/components/SleepSection";
 import { SignupForm } from "@/components/auth/SignupForm";
 import { places } from "@/data/places";
@@ -32,6 +34,19 @@ export default async function HomePage({
 
   const t = await getTranslations("hero");
 
+  // Sitios curados (sin casitas ni actividades) destacados. Si hay pocos
+  // featured, igualmente limitamos a 12 para que el grid del home
+  // quepa bien.
+  const featuredSites = places
+    .filter((p) => p.category !== "activity" && p.category !== "casita")
+    .filter((p) => p.featured)
+    .slice(0, 12);
+
+  // Actividades destacadas para el teaser.
+  const featuredActivities = places
+    .filter((p) => p.category === "activity" && p.featured)
+    .slice(0, 4);
+
   return (
     <>
       {/* Hero */}
@@ -43,7 +58,7 @@ export default async function HomePage({
               "radial-gradient(circle at 70% 0%, rgba(45,80,22,0.08), transparent 60%), radial-gradient(circle at 10% 100%, rgba(196,114,58,0.08), transparent 55%)",
           }}
         />
-        <div className="container-rc pt-10 sm:pt-14 pb-24 sm:pb-32 text-center fade-up">
+        <div className="container-rc pt-10 sm:pt-14 pb-20 sm:pb-28 text-center fade-up">
           <h1 className="font-[var(--font-display)] text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--color-ink)] max-w-3xl mx-auto leading-[1.05]">
             {t("title")}
           </h1>
@@ -67,10 +82,16 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* Mapa + Lista */}
-      <ExploreSection places={places} />
+      {/* Mapa + destacados curados */}
+      <HomeHighlights allPlaces={places} highlights={featuredSites} />
 
-      {/* Dónde dormir (Casitas Canarias) */}
+      {/* Actividades (Civitatis) */}
+      <HomeActivitiesTeaser activities={featuredActivities} />
+
+      {/* Rutas de un día */}
+      <HomeRoutesTeaser />
+
+      {/* Casitas Canarias */}
       <SleepSection />
 
       {/* Signup */}
