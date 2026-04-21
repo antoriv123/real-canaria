@@ -9,7 +9,8 @@ import { PlaceImage } from "@/components/places/PlaceImage";
 import { PlaceList } from "@/components/places/PlaceList";
 import { AddToPlanButton } from "@/components/places/AddToPlanButton";
 import type { Locale } from "@/i18n/config";
-import { routing } from "@/i18n/routing";
+import { absoluteUrl, canonicalUrl } from "@/lib/site";
+import { buildPageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return places.map((p) => ({ slug: p.slug }));
@@ -25,36 +26,18 @@ export async function generateMetadata({
   if (!place) return {};
   const tr = place.translations[locale as Locale];
   const imageUrl = place.imageUrl || getPlaceImageUrl(slug);
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://real-canaria.vercel.app";
+  const description = tr.description.slice(0, 160);
 
-  // Construct hreflang alternates
-  const languages: Record<string, string> = {};
-  for (const loc of routing.locales) {
-    languages[loc] = `${siteUrl}/${loc}/sitio/${slug}`;
-  }
-
-  return {
+  return buildPageMetadata({
+    locale,
+    path: `/sitio/${slug}`,
     title: `${tr.name} — Real Canaria`,
-    description: tr.description.slice(0, 160),
-    openGraph: {
-      title: tr.name,
-      description: tr.description.slice(0, 160),
-      url: `${siteUrl}/${locale}/sitio/${slug}`,
-      images: imageUrl ? [{ url: imageUrl, width: 1200, height: 800, alt: tr.name }] : [],
-      type: "website",
-      locale,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: tr.name,
-      description: tr.description.slice(0, 160),
-      images: imageUrl ? [imageUrl] : [],
-    },
-    alternates: {
-      canonical: `${siteUrl}/${locale}/sitio/${slug}`,
-      languages,
-    },
-  };
+    description,
+    ogTitle: tr.name,
+    ogImage: imageUrl,
+    ogImageHeight: 800,
+    ogImageAlt: tr.name,
+  });
 }
 
 function formatDuration(
@@ -111,11 +94,35 @@ export default async function PlacePage({
     ...(place.externalUrl && { url: place.externalUrl }),
   };
 
+  // BreadcrumbList: Home → (categoría) → Sitio
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Real Canaria",
+        item: absoluteUrl("", locale),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: tr.name,
+        item: canonicalUrl(locale, `/sitio/${place.slug}`),
+      },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
       <article className="container-rc py-6 sm:py-10 max-w-3xl">

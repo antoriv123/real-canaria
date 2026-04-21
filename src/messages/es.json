@@ -1,7 +1,31 @@
 {
   "meta": {
     "title": "Real Canaria — La Canaria que no sale en las guías",
-    "description": "Mapa con los mejores miradores, pueblos, museos y restaurantes de Gran Canaria. Curado por locales."
+    "description": "Mapa con los mejores miradores, pueblos, museos y restaurantes de Gran Canaria. Curado por locales.",
+    "sobre": {
+      "title": "Sobre Real Canaria — Guía local de Gran Canaria",
+      "description": "Real Canaria nace de Casitas Canarias, el negocio familiar de alquiler rural. La guía que le daríamos a un amigo que viene por primera vez."
+    },
+    "plan": {
+      "title": "Tu plan de viaje en Gran Canaria — Real Canaria",
+      "description": "Itinerario personalizado según tu fecha de visita. Miradores, pueblos y sitios únicos."
+    },
+    "privacidad": {
+      "title": "Política de privacidad — Real Canaria",
+      "description": "Cómo tratamos tus datos. Cumplimos el RGPD. Solo guardamos lo imprescindible para personalizar tu plan."
+    },
+    "rutas": {
+      "title": "Rutas de un día en Gran Canaria — Real Canaria",
+      "description": "Itinerarios curados para aprovechar cada día en la isla: miradores, pueblos, senderos y paradas para comer."
+    },
+    "rutasDetalle": {
+      "title": "{name} — Ruta de un día en Gran Canaria",
+      "description": "Itinerario completo para {name}. Paradas, distancias y consejos locales para un día redondo."
+    },
+    "actividades": {
+      "title": "Actividades y excursiones en Gran Canaria — Real Canaria",
+      "description": "Las mejores actividades de Gran Canaria: catamarán, senderismo guiado, buggy, kayak, parques. Reserva con confianza."
+    }
   },
   "nav": {
     "explore": "Explorar",

@@ -4,6 +4,7 @@ import { ExploreSection } from "@/components/ExploreSection";
 import { SleepSection } from "@/components/SleepSection";
 import { SignupForm } from "@/components/auth/SignupForm";
 import { places } from "@/data/places";
+import { buildPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 
 export async function generateMetadata({
@@ -13,10 +14,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
-  return {
+  return buildPageMetadata({
+    locale,
+    path: "",
     title: t("title"),
     description: t("description"),
-  };
+  });
 }
 
 export default async function HomePage({

@@ -1,10 +1,27 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
 import { getSessionUserId } from "@/lib/session";
 import { getUserById } from "@/lib/db";
 import { recommendForDate } from "@/lib/recommend";
 import { PlanFavorites } from "@/components/PlanFavorites";
+import { buildPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { Sparkles } from "lucide-react";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "meta.plan" });
+  return buildPageMetadata({
+    locale,
+    path: "/plan",
+    title: t("title"),
+    description: t("description"),
+  });
+}
 
 export default async function PlanPage({
   params,

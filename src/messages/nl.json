@@ -1,7 +1,31 @@
 {
   "meta": {
     "title": "Real Canaria — Het echte Gran Canaria, niet uit de reisgids",
-    "description": "Een kaart van de mooiste uitzichtpunten, dorpjes, musea en restaurants van Gran Canaria. Samengesteld door lokalen."
+    "description": "Een kaart van de mooiste uitzichtpunten, dorpjes, musea en restaurants van Gran Canaria. Samengesteld door lokalen.",
+    "sobre": {
+      "title": "Over Real Canaria — Lokale gids voor Gran Canaria",
+      "description": "Real Canaria komt voort uit Casitas Canarias, ons familiebedrijf voor landelijke verhuur. De gids die we aan een vriend zouden geven."
+    },
+    "plan": {
+      "title": "Jouw reisplan voor Gran Canaria — Real Canaria",
+      "description": "Een persoonlijke route op basis van je reisdatum. Uitzichtpunten, dorpjes en de plekken die toeristen missen."
+    },
+    "privacidad": {
+      "title": "Privacybeleid — Real Canaria",
+      "description": "Hoe we omgaan met je gegevens. AVG-conform. We bewaren alleen wat nodig is om je plan te personaliseren."
+    },
+    "rutas": {
+      "title": "Dagroutes op Gran Canaria — Real Canaria",
+      "description": "Samengestelde dagprogramma's voor elke dag op het eiland: uitzichtpunten, dorpjes, wandelpaden en restaurants."
+    },
+    "rutasDetalle": {
+      "title": "{name} — Dagroute op Gran Canaria",
+      "description": "Het volledige programma voor {name}. Stops, afstanden en lokale tips voor een geslaagde dag."
+    },
+    "actividades": {
+      "title": "Activiteiten en excursies op Gran Canaria — Real Canaria",
+      "description": "De beste activiteiten op Gran Canaria: catamaran, begeleide wandeltochten, buggy, kajak, parken. Zonder zorgen boeken."
+    }
   },
   "nav": {
     "explore": "Ontdekken",

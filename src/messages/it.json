@@ -1,7 +1,31 @@
 {
   "meta": {
     "title": "Real Canaria — La Canaria che non trovi sulle guide",
-    "description": "Una mappa con i migliori belvedere, paesi, musei e ristoranti di Gran Canaria. Selezionati da chi ci vive."
+    "description": "Una mappa con i migliori belvedere, paesi, musei e ristoranti di Gran Canaria. Selezionati da chi ci vive.",
+    "sobre": {
+      "title": "Chi siamo — Real Canaria, la guida locale di Gran Canaria",
+      "description": "Real Canaria nasce da Casitas Canarias, la nostra azienda di famiglia di affitti rurali. La guida che daremmo a un amico."
+    },
+    "plan": {
+      "title": "Il tuo piano di viaggio per Gran Canaria — Real Canaria",
+      "description": "Un itinerario personalizzato in base al periodo del tuo viaggio. Belvedere, paesi e i posti che i turisti non vedono."
+    },
+    "privacidad": {
+      "title": "Informativa sulla privacy — Real Canaria",
+      "description": "Come trattiamo i tuoi dati. Conforme al GDPR. Conserviamo solo ciò che serve per personalizzare il tuo piano."
+    },
+    "rutas": {
+      "title": "Itinerari di un giorno a Gran Canaria — Real Canaria",
+      "description": "Percorsi giornalieri selezionati per sfruttare al meglio ogni giorno sull'isola: belvedere, paesi, sentieri e dove mangiare."
+    },
+    "rutasDetalle": {
+      "title": "{name} — Itinerario di un giorno a Gran Canaria",
+      "description": "L'itinerario completo per {name}. Tappe, distanze e consigli locali per una giornata perfetta."
+    },
+    "actividades": {
+      "title": "Attività ed escursioni a Gran Canaria — Real Canaria",
+      "description": "Le migliori attività di Gran Canaria: catamarano, trekking con guida, buggy, kayak, parchi. Prenota senza pensieri."
+    }
   },
   "nav": {
     "explore": "Esplora",

@@ -1,7 +1,31 @@
 {
   "meta": {
     "title": "Real Canaria — The Canaria that's not in the guidebooks",
-    "description": "A map of Gran Canaria's best viewpoints, villages, museums and restaurants. Curated by locals."
+    "description": "A map of Gran Canaria's best viewpoints, villages, museums and restaurants. Curated by locals.",
+    "sobre": {
+      "title": "About Real Canaria — Local guide to Gran Canaria",
+      "description": "Real Canaria is built by Casitas Canarias, our family rural-rental business. The guide we'd give to a friend visiting for the first time."
+    },
+    "plan": {
+      "title": "Your Gran Canaria trip plan — Real Canaria",
+      "description": "A personalised itinerary based on when you're visiting. Viewpoints, villages and the spots tourists miss."
+    },
+    "privacidad": {
+      "title": "Privacy policy — Real Canaria",
+      "description": "How we handle your data. GDPR-compliant. We only store what's needed to personalise your plan."
+    },
+    "rutas": {
+      "title": "One-day routes in Gran Canaria — Real Canaria",
+      "description": "Curated day itineraries to make the most of every day on the island: viewpoints, villages, trails and where to eat."
+    },
+    "rutasDetalle": {
+      "title": "{name} — One-day route in Gran Canaria",
+      "description": "The full itinerary for {name}. Stops, distances and local tips for a great day out."
+    },
+    "actividades": {
+      "title": "Things to do & excursions in Gran Canaria — Real Canaria",
+      "description": "The best activities in Gran Canaria: catamaran, guided hiking, buggy, kayak, theme parks. Book with peace of mind."
+    }
   },
   "nav": {
     "explore": "Explore",

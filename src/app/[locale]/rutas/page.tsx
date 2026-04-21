@@ -1,8 +1,25 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Clock, Route as RouteIcon } from "lucide-react";
 import { routes } from "@/data/routes";
 import type { Locale } from "@/i18n/config";
+import { buildPageMetadata } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "meta.rutas" });
+  return buildPageMetadata({
+    locale,
+    path: "/rutas",
+    title: t("title"),
+    description: t("description"),
+  });
+}
 
 export default async function RoutesPage({
   params,

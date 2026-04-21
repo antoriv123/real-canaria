@@ -2,14 +2,35 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Clock, Route as RouteIcon } from "lucide-react";
+import type { Metadata } from "next";
 import { routes, getRouteBySlug } from "@/data/routes";
 import { getPlaceBySlug } from "@/data/places";
 import { getPlaceImageUrl } from "@/data/place-images";
 import { PlaceList } from "@/components/places/PlaceList";
 import type { Locale } from "@/i18n/config";
+import { buildPageMetadata } from "@/lib/seo";
+import { absoluteUrl, canonicalUrl } from "@/lib/site";
 
 export function generateStaticParams() {
   return routes.map((r) => ({ slug: r.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const route = getRouteBySlug(slug);
+  if (!route) return {};
+  const tr = route.translations[locale as Locale];
+  const t = await getTranslations({ locale, namespace: "meta.rutasDetalle" });
+  return buildPageMetadata({
+    locale,
+    path: `/rutas/${slug}`,
+    title: t("title", { name: tr.name }),
+    description: t("description", { name: tr.name }),
+  });
 }
 
 export default async function RouteDetailPage({
@@ -31,8 +52,61 @@ export default async function RouteDetailPage({
     .map((s) => getPlaceBySlug(s))
     .filter((p): p is NonNullable<typeof p> => p !== null);
 
+  // JSON-LD TouristTrip con itinerario (cada parada como TouristAttraction)
+  const tripLd = {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    name: tr.name,
+    description: tr.description,
+    url: canonicalUrl(locale, `/rutas/${route.slug}`),
+    itinerary: stops.map((s, idx) => ({
+      "@type": "TouristAttraction",
+      position: idx + 1,
+      name: s.translations[locale as Locale].name,
+      url: canonicalUrl(locale, `/sitio/${s.slug}`),
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: s.lat,
+        longitude: s.lng,
+      },
+    })),
+  };
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Real Canaria",
+        item: absoluteUrl("", locale),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: t("title"),
+        item: canonicalUrl(locale, "/rutas"),
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: tr.name,
+        item: canonicalUrl(locale, `/rutas/${route.slug}`),
+      },
+    ],
+  };
+
   return (
     <article className="container-rc py-6 sm:py-10 max-w-4xl">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(tripLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <Link
         href={`/${locale}/rutas`}
         className="inline-flex items-center gap-1 text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-primary)] mb-4"
