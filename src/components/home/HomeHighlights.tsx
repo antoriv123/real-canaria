@@ -27,7 +27,7 @@ export function HomeHighlights({ allPlaces, highlights }: Props) {
 
   return (
     <section id="map" className="bg-[var(--color-surface)]">
-      <div className="container-rc pt-16 sm:pt-24 lg:pt-32 pb-16 sm:pb-24 lg:pb-32">
+      <div className="container-rc pt-24 sm:pt-32 lg:pt-40 pb-24 sm:pb-32 lg:pb-40">
         {/* Mapa full */}
         <div className="mb-20 sm:mb-28 lg:mb-36 fade-up">
           <MapView places={allPlaces} highlight={null} />
