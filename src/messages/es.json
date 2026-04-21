@@ -143,13 +143,13 @@
   },
   "home": {
     "highlightsTitle": "Lo imprescindible",
-    "highlightsSubtitle": "Los sitios que no te puedes perder en Gran Canaria.",
+    "highlightsSubtitle": "Lo que enseñaríamos a un amigo que viene por primera vez.",
     "seeAllPlaces": "Ver todos los sitios",
-    "activitiesTitle": "Actividades y excursiones",
-    "activitiesSubtitle": "Las experiencias más reservadas de la isla. Con afiliado Civitatis.",
+    "activitiesTitle": "Qué hacer",
+    "activitiesSubtitle": "Planes que no se improvisan — catamarán, senderos guiados, parques.",
     "seeAllActivities": "Ver todas las actividades",
-    "routesTitle": "Rutas de un día",
-    "routesSubtitle": "Itinerarios completos por si no sabes por dónde empezar.",
+    "routesTitle": "Planes de un día",
+    "routesSubtitle": "Itinerarios ya resueltos, con paradas y tiempos.",
     "seeAllRoutes": "Ver todas las rutas"
   },
   "notFound": {

@@ -17,13 +17,13 @@ export function HomeRoutesTeaser() {
 
   return (
     <section className="bg-[var(--color-surface)] border-t border-[var(--color-border)]">
-      <div className="container-rc py-12 sm:py-16">
-        <div className="flex items-end justify-between gap-4 mb-5">
+      <div className="container-rc py-12 sm:py-16 lg:py-20">
+        <div className="flex items-end justify-between gap-4 mb-6 lg:mb-8">
           <div>
-            <h2 className="font-[var(--font-display)] text-2xl sm:text-3xl font-bold text-[var(--color-ink)]">
+            <h2 className="font-[var(--font-display)] text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-ink)] leading-tight">
               {t("routesTitle")}
             </h2>
-            <p className="text-[var(--color-ink-muted)] mt-1 max-w-xl">
+            <p className="text-[var(--color-ink-muted)] mt-2 max-w-xl lg:text-lg">
               {t("routesSubtitle")}
             </p>
           </div>

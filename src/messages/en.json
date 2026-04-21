@@ -143,13 +143,13 @@
   },
   "home": {
     "highlightsTitle": "The essentials",
-    "highlightsSubtitle": "The spots you can't miss in Gran Canaria.",
+    "highlightsSubtitle": "What we'd show a friend visiting for the first time.",
     "seeAllPlaces": "See every spot",
     "activitiesTitle": "Things to do",
-    "activitiesSubtitle": "The most-booked experiences on the island. Civitatis affiliate.",
+    "activitiesSubtitle": "Plans you can't wing — catamarans, guided hikes, parks.",
     "seeAllActivities": "See every activity",
-    "routesTitle": "One-day routes",
-    "routesSubtitle": "Full itineraries if you don't know where to start.",
+    "routesTitle": "Full-day plans",
+    "routesSubtitle": "Ready-made itineraries with stops and timings.",
     "seeAllRoutes": "See every route"
   },
   "notFound": {

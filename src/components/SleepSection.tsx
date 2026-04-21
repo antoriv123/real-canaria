@@ -15,17 +15,17 @@ export function SleepSection() {
 
   return (
     <div className="bg-gradient-to-b from-[var(--color-bg)] to-[var(--color-warm)]/10 border-t border-[var(--color-border)]">
-      <section className="container-rc py-12 sm:py-16">
-        <div className="flex items-start justify-between gap-4 mb-6">
+      <section className="container-rc py-12 sm:py-16 lg:py-20">
+        <div className="flex items-start justify-between gap-4 mb-6 lg:mb-8">
           <div>
             <div className="flex items-center gap-2 mb-2 text-[var(--color-warm)]">
               <Bed size={18} />
-              <span className="text-xs font-bold uppercase tracking-wide">Casitas Canarias</span>
+              <span className="text-xs font-bold uppercase tracking-[0.14em]">Casitas Canarias</span>
             </div>
-            <h2 className="font-[var(--font-display)] text-2xl sm:text-3xl font-bold text-[var(--color-ink)]">
+            <h2 className="font-[var(--font-display)] text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-ink)] leading-tight">
               {t("title")}
             </h2>
-            <p className="text-[var(--color-ink-muted)] mt-1">{t("subtitle")}</p>
+            <p className="text-[var(--color-ink-muted)] mt-2 max-w-xl lg:text-lg">{t("subtitle")}</p>
           </div>
           <a
             href={casitasHref}

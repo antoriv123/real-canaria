@@ -143,13 +143,13 @@
   },
   "home": {
     "highlightsTitle": "L'essenziale",
-    "highlightsSubtitle": "I posti da non perdere a Gran Canaria.",
+    "highlightsSubtitle": "Quello che mostreremmo a un amico alla prima volta.",
     "seeAllPlaces": "Vedi tutti i posti",
-    "activitiesTitle": "Attività ed escursioni",
-    "activitiesSubtitle": "Le esperienze più prenotate dell'isola. Partner Civitatis.",
+    "activitiesTitle": "Cosa fare",
+    "activitiesSubtitle": "Piani che non si improvvisano — catamarano, trekking guidati, parchi.",
     "seeAllActivities": "Vedi tutte le attività",
-    "routesTitle": "Itinerari di un giorno",
-    "routesSubtitle": "Programmi pronti se non sai da dove iniziare.",
+    "routesTitle": "Piani di un giorno",
+    "routesSubtitle": "Itinerari pronti con tappe e tempi.",
     "seeAllRoutes": "Vedi tutti gli itinerari"
   },
   "notFound": {

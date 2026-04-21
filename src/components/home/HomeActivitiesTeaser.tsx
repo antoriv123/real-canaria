@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { ArrowRight, Ticket } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import type { Place } from "@/lib/types";
 import type { Locale } from "@/i18n/config";
 import { PlaceImage } from "@/components/places/PlaceImage";
@@ -10,32 +10,26 @@ interface Props {
 }
 
 /**
- * Teaser de actividades en el home: 3-4 tarjetas de las actividades
- * destacadas (featured) con eyebrow de "Civitatis", CTA a /actividades.
- * Diferenciado visualmente del bloque de sitios curados (color warm).
+ * Teaser de actividades en la home: 4 tarjetas de las actividades
+ * destacadas con CTA a /actividades. El disclaimer de afiliado solo
+ * vive en /actividades (no ensuciamos aquí al usuario con detalles
+ * técnicos).
  */
 export function HomeActivitiesTeaser({ activities }: Props) {
   const t = useTranslations("home");
-  const tAct = useTranslations("activities");
   const locale = useLocale() as Locale;
 
   if (activities.length === 0) return null;
 
   return (
     <section className="bg-[var(--color-bg)] border-t border-[var(--color-border)]">
-      <div className="container-rc py-12 sm:py-16">
-        <div className="flex items-end justify-between gap-4 mb-5">
+      <div className="container-rc py-12 sm:py-16 lg:py-20">
+        <div className="flex items-end justify-between gap-4 mb-6 lg:mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-2 text-[var(--color-warm)]">
-              <Ticket size={16} />
-              <span className="text-xs font-bold uppercase tracking-wide">
-                {tAct("eyebrow")}
-              </span>
-            </div>
-            <h2 className="font-[var(--font-display)] text-2xl sm:text-3xl font-bold text-[var(--color-ink)]">
+            <h2 className="font-[var(--font-display)] text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-ink)] leading-tight">
               {t("activitiesTitle")}
             </h2>
-            <p className="text-[var(--color-ink-muted)] mt-1 max-w-xl">
+            <p className="text-[var(--color-ink-muted)] mt-2 max-w-xl lg:text-lg">
               {t("activitiesSubtitle")}
             </p>
           </div>
