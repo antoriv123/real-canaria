@@ -71,6 +71,18 @@ ssh crr-remoto "cd /home/claudio/projects/real-canaria && git pull && pnpm insta
 - Commits y PRs en español
 - Copy de la web: 6 idiomas via messages/
 
+## STATUS.md — LEER SIEMPRE
+
+El archivo `STATUS.md` es el tablero compartido del proyecto. Es OBLIGATORIO:
+
+1. **Al empezar sesión**: leer `STATUS.md` para saber qué está haciendo el otro y qué hay pendiente.
+2. **Al empezar una tarea**: apuntar tu nombre, rama y qué vas a hacer en la tabla "En curso".
+3. **Al terminar una tarea**: mover la tarea a "Hecho recientemente", quitar tu fila de "En curso", y actualizar "Pendiente" si aplica.
+4. **Al tomar una decisión importante**: apuntarla en "Decisiones tomadas".
+5. Los cambios a STATUS.md se commitean junto con el trabajo (en la misma rama/PR).
+
+Si ves que el otro tiene una tarea "En curso" que toca los mismos archivos que vas a tocar tú, **NO empieces** — avisa primero para coordinarse.
+
 ## Qué NO hacer
 
 - No instalar dependencias nuevas sin consenso previo
