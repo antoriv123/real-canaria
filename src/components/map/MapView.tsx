@@ -12,6 +12,7 @@ const CATEGORY_COLORS: Record<PlaceCategory, string> = {
   museum: "#393E47",
   restaurant: "#A22A1C",
   casita: "#E4AD13",
+  activity: "#D97706",
 };
 
 // SVG teardrop pin — 24x32, compacto y limpio tipo Google Maps

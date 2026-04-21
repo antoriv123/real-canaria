@@ -46,6 +46,7 @@
     "village": "Pueblos",
     "museum": "Museos",
     "restaurant": "Restaurantes",
+    "activity": "Actividades",
     "casita": "Casas rurales",
     "showing": "{count, plural, =1 {1 sitio} other {# sitios}}",
     "searchPlaceholder": "Buscar un sitio…",
@@ -98,7 +99,9 @@
     "nearby": "Cerca de aquí",
     "addToPlan": "Añadir a mi plan",
     "removeFromPlan": "Quitar de mi plan",
-    "sleepHere": "¿Dónde dormir cerca?"
+    "sleepHere": "¿Dónde dormir cerca?",
+    "bookOnCivitatis": "Reservar en Civitatis",
+    "affiliateDisclosure": "Enlace de afiliado — sin coste extra para ti, nos ayuda a mantener esta guía."
   },
   "routes": {
     "title": "Rutas sugeridas por día",

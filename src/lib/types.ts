@@ -5,7 +5,8 @@ export type PlaceCategory =
   | "village"
   | "museum"
   | "restaurant"
-  | "casita";
+  | "casita"
+  | "activity";
 
 export interface PlaceTranslation {
   name: string;

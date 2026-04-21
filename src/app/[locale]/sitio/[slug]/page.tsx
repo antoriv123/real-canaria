@@ -1,7 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, MapPin, Clock, Euro, TrendingUp, Bed } from "lucide-react";
+import { ArrowLeft, ExternalLink, MapPin, Clock, Euro, TrendingUp, Bed, Ticket } from "lucide-react";
 import type { Metadata } from "next";
 import { getPlaceBySlug, places, nearbyPlaces } from "@/data/places";
 import { getPlaceImageUrl } from "@/data/place-images";
@@ -11,6 +11,7 @@ import { AddToPlanButton } from "@/components/places/AddToPlanButton";
 import type { Locale } from "@/i18n/config";
 import { absoluteUrl, canonicalUrl } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
+import { civitatisLink, isCivitatisUrl } from "@/config/affiliates";
 
 export function generateStaticParams() {
   return places.map((p) => ({ slug: p.slug }));
@@ -74,25 +75,55 @@ export default async function PlacePage({
     .slice(0, 2)
     .map((x) => x.p);
 
-  // JSON-LD TouristAttraction
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "TouristAttraction",
-    name: tr.name,
-    description: tr.description,
-    image: imageUrl,
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: place.lat,
-      longitude: place.lng,
-    },
-    address: {
-      "@type": "PostalAddress",
-      addressRegion: "Las Palmas",
-      addressCountry: "ES",
-    },
-    ...(place.externalUrl && { url: place.externalUrl }),
-  };
+  // JSON-LD: Product si es actividad con link de reserva; TouristAttraction para el resto
+  const isActivity = place.category === "activity";
+  const isCivitatis = isCivitatisUrl(place.externalUrl);
+  const affiliateUrl = place.externalUrl
+    ? isCivitatis
+      ? civitatisLink(place.externalUrl)
+      : place.externalUrl
+    : null;
+
+  const jsonLd = isActivity && place.externalUrl
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        name: tr.name,
+        description: tr.description,
+        image: imageUrl || undefined,
+        category: "TouristTrip",
+        brand: {
+          "@type": "Organization",
+          name: "Civitatis",
+        },
+        offers: {
+          "@type": "Offer",
+          url: place.externalUrl,
+          availability: "https://schema.org/InStock",
+          areaServed: {
+            "@type": "Place",
+            name: "Gran Canaria",
+          },
+        },
+      }
+    : {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        name: tr.name,
+        description: tr.description,
+        image: imageUrl,
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: place.lat,
+          longitude: place.lng,
+        },
+        address: {
+          "@type": "PostalAddress",
+          addressRegion: "Las Palmas",
+          addressCountry: "ES",
+        },
+        ...(place.externalUrl && { url: place.externalUrl }),
+      };
 
   // BreadcrumbList: Home → (categoría) → Sitio
   const breadcrumbLd = {
@@ -219,17 +250,32 @@ export default async function PlacePage({
           </div>
         )}
 
-        <div className="flex flex-col sm:flex-row gap-2 mb-8">
+        <div className="flex flex-col sm:flex-row gap-2 mb-3">
+          {isActivity && affiliateUrl ? (
+            <a
+              href={affiliateUrl}
+              target="_blank"
+              rel="sponsored noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-[var(--radius)] bg-[var(--color-warm)] text-[#2A1E00] font-semibold text-sm hover:brightness-110 transition-all"
+            >
+              <Ticket size={16} />
+              {t("bookOnCivitatis")}
+            </a>
+          ) : null}
           <a
             href={mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-[var(--radius)] bg-[var(--color-primary)] text-white font-semibold text-sm hover:bg-[var(--color-primary-hover)]"
+            className={`inline-flex items-center justify-center gap-2 h-11 px-5 rounded-[var(--radius)] font-semibold text-sm ${
+              isActivity && affiliateUrl
+                ? "border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-ink)] hover:border-[var(--color-primary)]/40"
+                : "bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-hover)]"
+            }`}
           >
             <MapPin size={16} />
             {t("directions")}
           </a>
-          {place.externalUrl && (
+          {place.externalUrl && !(isActivity && affiliateUrl) && (
             <a
               href={place.externalUrl}
               target="_blank"
@@ -242,6 +288,12 @@ export default async function PlacePage({
           )}
           <AddToPlanButton slug={place.slug} />
         </div>
+        {isActivity && affiliateUrl && isCivitatis && (
+          <p className="text-xs text-[var(--color-ink-muted)] mb-8">
+            {t("affiliateDisclosure")}
+          </p>
+        )}
+        {!(isActivity && affiliateUrl && isCivitatis) && <div className="mb-5" />}
 
         {/* Dónde dormir cerca (casitas) */}
         {!place.isCasita && casitasNearby.length > 0 && (

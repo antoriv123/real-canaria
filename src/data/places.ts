@@ -1,5 +1,6 @@
 import type { Place } from "@/lib/types";
 import { placesExtra } from "./places-extra";
+import { placesActivities } from "./places-activities";
 
 const placesCore: Place[] = [
   // ========== MIRADORES / NATURALEZA (11) ==========
@@ -580,7 +581,7 @@ const placesCore: Place[] = [
 ];
 
 // Combina los 37 del core + 63 extras = 100 sitios
-export const places: Place[] = [...placesCore, ...placesExtra];
+export const places: Place[] = [...placesCore, ...placesExtra, ...placesActivities];
 
 export function getPlaceBySlug(slug: string): Place | null {
   return places.find((p) => p.slug === slug) ?? null;

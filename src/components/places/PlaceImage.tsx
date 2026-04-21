@@ -21,6 +21,7 @@ const CATEGORY_THEME: Record<PlaceCategory, { from: string; to: string; accent: 
   museum: { from: "#393E47", to: "#1E2128", accent: "#8B93A1" },
   restaurant: { from: "#A22A1C", to: "#6B1B12", accent: "#F5A89C" },
   casita: { from: "#E4AD13", to: "#8F6A0A", accent: "#FDE5A6" },
+  activity: { from: "#D97706", to: "#7C3F05", accent: "#FDBA74" },
 };
 
 function Illustration({ category, color }: { category: PlaceCategory; color: string }) {
@@ -75,6 +76,19 @@ function Illustration({ category, color }: { category: PlaceCategory; color: str
           <rect x="275" y="260" width="50" height="80" fill={color} opacity="0.7" />
           <rect x="210" y="235" width="40" height="40" fill={color} opacity="0.65" />
           <rect x="350" y="235" width="40" height="40" fill={color} opacity="0.65" />
+        </g>
+      );
+    case "activity":
+      return (
+        <g>
+          {/* Ticket/rectángulo con bordes perforados */}
+          <rect x="150" y="150" width="300" height="150" rx="14" fill={color} opacity="0.45" />
+          <circle cx="150" cy="225" r="14" fill="#FDFAF0" opacity="0.85" />
+          <circle cx="450" cy="225" r="14" fill="#FDFAF0" opacity="0.85" />
+          <line x1="300" y1="160" x2="300" y2="290" stroke={color} strokeWidth="4" strokeDasharray="8 6" opacity="0.7" />
+          {/* Montaña + sol simbólicos al fondo */}
+          <circle cx="500" cy="90" r="24" fill={color} opacity="0.5" />
+          <path d="M0,360 L140,240 L240,320 L360,220 L500,330 L600,260 L600,400 L0,400 Z" fill={color} opacity="0.3" />
         </g>
       );
   }

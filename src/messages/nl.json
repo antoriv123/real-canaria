@@ -46,6 +46,7 @@
     "village": "Dorpjes",
     "museum": "Musea",
     "restaurant": "Restaurants",
+    "activity": "Activiteiten",
     "casita": "Landhuizen",
     "showing": "{count, plural, =1 {1 plek} other {# plekken}}",
     "searchPlaceholder": "Zoek een plek…",
@@ -98,7 +99,9 @@
     "nearby": "In de buurt",
     "addToPlan": "Aan mijn plan",
     "removeFromPlan": "Uit plan halen",
-    "sleepHere": "Waar overnachten?"
+    "sleepHere": "Waar overnachten?",
+    "bookOnCivitatis": "Boek op Civitatis",
+    "affiliateDisclosure": "Affiliate-link — zonder extra kosten voor jou, hiermee houden we deze gids gratis."
   },
   "routes": {
     "title": "Aanbevolen dagroutes",

@@ -46,6 +46,7 @@
     "village": "Paesi",
     "museum": "Musei",
     "restaurant": "Ristoranti",
+    "activity": "Attività",
     "casita": "Case rurali",
     "showing": "{count, plural, =1 {1 luogo} other {# luoghi}}",
     "searchPlaceholder": "Cerca un luogo…",
@@ -98,7 +99,9 @@
     "nearby": "Nelle vicinanze",
     "addToPlan": "Aggiungi al piano",
     "removeFromPlan": "Togli dal piano",
-    "sleepHere": "Dove dormire vicino?"
+    "sleepHere": "Dove dormire vicino?",
+    "bookOnCivitatis": "Prenota su Civitatis",
+    "affiliateDisclosure": "Link di affiliazione — nessun costo extra per te, ci aiuta a mantenere gratuita questa guida."
   },
   "routes": {
     "title": "Itinerari per un giorno",

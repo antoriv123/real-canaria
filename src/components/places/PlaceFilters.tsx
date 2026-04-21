@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import type { PlaceCategory } from "@/lib/types";
-import { Mountain, Home, Landmark, UtensilsCrossed, Bed, Layers, Search, X } from "lucide-react";
+import { Mountain, Home, Landmark, UtensilsCrossed, Bed, Layers, Search, X, Ticket } from "lucide-react";
 
 const CATEGORIES: Array<{ key: PlaceCategory | "all"; icon: React.ComponentType<{ size?: number }> }> = [
   { key: "all", icon: Layers },
@@ -10,6 +10,7 @@ const CATEGORIES: Array<{ key: PlaceCategory | "all"; icon: React.ComponentType<
   { key: "village", icon: Home },
   { key: "museum", icon: Landmark },
   { key: "restaurant", icon: UtensilsCrossed },
+  { key: "activity", icon: Ticket },
   { key: "casita", icon: Bed },
 ];
 
