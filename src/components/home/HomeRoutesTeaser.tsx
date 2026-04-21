@@ -17,13 +17,13 @@ export function HomeRoutesTeaser() {
 
   return (
     <section className="bg-[var(--color-surface)] border-t border-[var(--color-border)]">
-      <div className="container-rc py-12 sm:py-16 lg:py-20">
-        <div className="flex items-end justify-between gap-4 mb-6 lg:mb-8">
+      <div className="container-rc py-16 sm:py-24 lg:py-32">
+        <div className="flex items-end justify-between gap-6 mb-10 lg:mb-14">
           <div>
-            <h2 className="font-[var(--font-display)] text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-ink)] leading-tight">
+            <h2 className="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-ink)] leading-tight">
               {t("routesTitle")}
             </h2>
-            <p className="text-[var(--color-ink-muted)] mt-2 max-w-xl lg:text-lg">
+            <p className="text-[var(--color-ink-muted)] mt-3 lg:mt-4 max-w-xl text-base lg:text-lg">
               {t("routesSubtitle")}
             </p>
           </div>
@@ -36,28 +36,28 @@ export function HomeRoutesTeaser() {
           </Link>
         </div>
 
-        <ul className="grid sm:grid-cols-3 gap-4 lg:gap-5">
+        <ul className="grid sm:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {preview.map((r) => {
             const tr = r.translations[locale];
             return (
               <li key={r.slug}>
                 <Link
                   href={`/${locale}/rutas/${r.slug}`}
-                  className="block group h-full p-5 rounded-[var(--radius-lg)] bg-[var(--color-bg)] border border-[var(--color-border)] hover:border-[var(--color-primary)]/40 transition-all hover:shadow-md"
+                  className="block group h-full p-6 lg:p-8 rounded-[var(--radius-lg)] bg-[var(--color-bg)] border border-[var(--color-border)] hover:border-[var(--color-primary)]/40 transition-all hover:shadow-md"
                 >
-                  <h3 className="font-[var(--font-display)] text-lg font-bold text-[var(--color-ink)] group-hover:text-[var(--color-primary)] mb-2 leading-tight">
+                  <h3 className="font-[var(--font-display)] text-lg lg:text-xl font-bold text-[var(--color-ink)] group-hover:text-[var(--color-primary)] mb-3 leading-tight">
                     {tr.name}
                   </h3>
-                  <p className="text-sm text-[var(--color-ink-muted)] mb-3 line-clamp-2">
+                  <p className="text-sm lg:text-base text-[var(--color-ink-muted)] mb-5 line-clamp-2 leading-relaxed">
                     {tr.description}
                   </p>
-                  <div className="flex gap-3 text-xs text-[var(--color-ink-muted)]">
-                    <span className="inline-flex items-center gap-1">
-                      <Clock size={12} />
+                  <div className="flex gap-4 text-xs lg:text-sm text-[var(--color-ink-muted)]">
+                    <span className="inline-flex items-center gap-1.5">
+                      <Clock size={13} />
                       {tRoutes("durationLabel", { hours: r.durationHours })}
                     </span>
-                    <span className="inline-flex items-center gap-1">
-                      <RouteIcon size={12} />
+                    <span className="inline-flex items-center gap-1.5">
+                      <RouteIcon size={13} />
                       {tRoutes("distanceLabel", { km: r.distanceKm })}
                     </span>
                   </div>

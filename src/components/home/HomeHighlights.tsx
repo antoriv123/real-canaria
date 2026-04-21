@@ -30,19 +30,19 @@ export function HomeHighlights({ allPlaces, highlights }: Props) {
       id="map"
       className="bg-[var(--color-surface)] border-t border-[var(--color-border)]"
     >
-      <div className="container-rc pt-10 sm:pt-14 lg:pt-20 pb-12 sm:pb-16 lg:pb-20">
+      <div className="container-rc pt-16 sm:pt-24 lg:pt-32 pb-16 sm:pb-24 lg:pb-32">
         {/* Mapa full */}
-        <div className="mb-10 sm:mb-14 lg:mb-16 fade-up">
+        <div className="mb-20 sm:mb-28 lg:mb-36 fade-up">
           <MapView places={allPlaces} highlight={null} />
         </div>
 
         {/* Destacados */}
-        <div className="flex items-end justify-between gap-4 mb-6 lg:mb-8">
+        <div className="flex items-end justify-between gap-6 mb-10 lg:mb-14">
           <div>
-            <h2 className="font-[var(--font-display)] text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-ink)] leading-tight">
+            <h2 className="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-ink)] leading-tight">
               {t("highlightsTitle")}
             </h2>
-            <p className="text-[var(--color-ink-muted)] mt-2 max-w-xl lg:text-lg">
+            <p className="text-[var(--color-ink-muted)] mt-3 lg:mt-4 max-w-xl text-base lg:text-lg">
               {t("highlightsSubtitle")}
             </p>
           </div>

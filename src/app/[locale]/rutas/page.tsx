@@ -34,36 +34,36 @@ export default async function RoutesPage({
 
   return (
     <>
-      <div className="container-rc py-10 lg:py-14">
-        <div className="max-w-3xl mb-10">
-          <h1 className="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-bold mb-3">
+      <div className="container-rc pt-16 sm:pt-24 lg:pt-32 pb-20 lg:pb-28">
+        <div className="max-w-3xl mb-14 lg:mb-20">
+          <h1 className="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight">
             {t("title")}
           </h1>
-          <p className="text-lg lg:text-xl text-[var(--color-ink-muted)]">{t("subtitle")}</p>
+          <p className="text-lg lg:text-xl text-[var(--color-ink-muted)] leading-relaxed">{t("subtitle")}</p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 lg:gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5 sm:gap-6 lg:gap-8">
           {routes.map((r) => {
             const tr = r.translations[locale as Locale];
             return (
               <Link
                 key={r.slug}
                 href={`/${locale}/rutas/${r.slug}`}
-                className="block group p-5 rounded-[var(--radius-lg)] bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-primary)]/40 hover:shadow-md transition-all"
+                className="block group p-6 lg:p-8 rounded-[var(--radius-lg)] bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-primary)]/40 hover:shadow-md transition-all"
               >
-                <h2 className="font-[var(--font-display)] text-xl font-bold text-[var(--color-ink)] group-hover:text-[var(--color-primary)] mb-2">
+                <h2 className="font-[var(--font-display)] text-xl lg:text-2xl font-bold text-[var(--color-ink)] group-hover:text-[var(--color-primary)] mb-3 leading-tight">
                   {tr.name}
                 </h2>
-                <p className="text-sm text-[var(--color-ink-muted)] mb-4 line-clamp-3">
+                <p className="text-sm lg:text-base text-[var(--color-ink-muted)] mb-6 line-clamp-3 leading-relaxed">
                   {tr.description}
                 </p>
-                <div className="flex gap-4 text-xs text-[var(--color-ink-muted)]">
-                  <span className="inline-flex items-center gap-1">
-                    <Clock size={12} />
+                <div className="flex gap-4 lg:gap-5 text-xs lg:text-sm text-[var(--color-ink-muted)]">
+                  <span className="inline-flex items-center gap-1.5">
+                    <Clock size={13} />
                     {t("durationLabel", { hours: r.durationHours })}
                   </span>
-                  <span className="inline-flex items-center gap-1">
-                    <RouteIcon size={12} />
+                  <span className="inline-flex items-center gap-1.5">
+                    <RouteIcon size={13} />
                     {t("distanceLabel", { km: r.distanceKm })}
                   </span>
                   <span>{r.stopSlugs.length} paradas</span>

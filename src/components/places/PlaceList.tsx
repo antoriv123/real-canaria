@@ -34,7 +34,7 @@ export function PlaceList({ places, onHover }: Props) {
   }
 
   return (
-    <ul className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 lg:gap-5 stagger">
+    <ul className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5 sm:gap-6 lg:gap-8 stagger">
       {places.map((place) => {
         const Icon = ICONS[place.category] ?? MapPin;
         const t = place.translations[locale];
@@ -57,15 +57,15 @@ export function PlaceList({ places, onHover }: Props) {
                     className="transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
-              <div className="p-4">
-                <div className="flex items-center gap-1.5 text-xs text-[var(--color-ink-muted)] mb-1.5">
+              <div className="p-5 lg:p-6">
+                <div className="flex items-center gap-1.5 text-xs text-[var(--color-ink-muted)] mb-3">
                   <Icon size={12} />
-                  <span className="uppercase tracking-wide">{place.category}</span>
+                  <span className="uppercase tracking-[0.12em]">{place.category}</span>
                 </div>
-                <h3 className="font-[var(--font-display)] font-semibold text-base text-[var(--color-ink)] leading-tight mb-1">
+                <h3 className="font-[var(--font-display)] font-semibold text-lg text-[var(--color-ink)] leading-tight mb-2">
                   {t.name}
                 </h3>
-                <p className="text-sm text-[var(--color-ink-muted)] line-clamp-2">{t.description}</p>
+                <p className="text-sm text-[var(--color-ink-muted)] line-clamp-2 leading-relaxed">{t.description}</p>
               </div>
               </Link>
               {/* Fav button overlay */}

@@ -23,13 +23,13 @@ export function HomeActivitiesTeaser({ activities }: Props) {
 
   return (
     <section className="bg-[var(--color-bg)] border-t border-[var(--color-border)]">
-      <div className="container-rc py-12 sm:py-16 lg:py-20">
-        <div className="flex items-end justify-between gap-4 mb-6 lg:mb-8">
+      <div className="container-rc py-16 sm:py-24 lg:py-32">
+        <div className="flex items-end justify-between gap-6 mb-10 lg:mb-14">
           <div>
-            <h2 className="font-[var(--font-display)] text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-ink)] leading-tight">
+            <h2 className="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-ink)] leading-tight">
               {t("activitiesTitle")}
             </h2>
-            <p className="text-[var(--color-ink-muted)] mt-2 max-w-xl lg:text-lg">
+            <p className="text-[var(--color-ink-muted)] mt-3 lg:mt-4 max-w-xl text-base lg:text-lg">
               {t("activitiesSubtitle")}
             </p>
           </div>
@@ -42,7 +42,7 @@ export function HomeActivitiesTeaser({ activities }: Props) {
           </Link>
         </div>
 
-        <ul className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
+        <ul className="grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-8">
           {activities.slice(0, 4).map((a) => {
             const tr = a.translations[locale];
             return (
@@ -60,11 +60,11 @@ export function HomeActivitiesTeaser({ activities }: Props) {
                       className="transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="p-3">
-                    <p className="font-[var(--font-display)] font-semibold text-sm leading-tight mb-1">
+                  <div className="p-4 lg:p-5">
+                    <p className="font-[var(--font-display)] font-semibold text-sm lg:text-base leading-tight mb-2">
                       {tr.name}
                     </p>
-                    <p className="text-xs text-[var(--color-ink-muted)] line-clamp-2">
+                    <p className="text-xs lg:text-sm text-[var(--color-ink-muted)] line-clamp-2 leading-relaxed">
                       {tr.description}
                     </p>
                   </div>

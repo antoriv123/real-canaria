@@ -15,17 +15,17 @@ export function SleepSection() {
 
   return (
     <div className="bg-gradient-to-b from-[var(--color-bg)] to-[var(--color-warm)]/10 border-t border-[var(--color-border)]">
-      <section className="container-rc py-12 sm:py-16 lg:py-20">
-        <div className="flex items-start justify-between gap-4 mb-6 lg:mb-8">
+      <section className="container-rc py-16 sm:py-24 lg:py-32">
+        <div className="flex items-start justify-between gap-6 mb-10 lg:mb-14">
           <div>
-            <div className="flex items-center gap-2 mb-2 text-[var(--color-warm)]">
+            <div className="flex items-center gap-2 mb-4 text-[var(--color-warm)]">
               <Bed size={18} />
               <span className="text-xs font-bold uppercase tracking-[0.14em]">Casitas Canarias</span>
             </div>
-            <h2 className="font-[var(--font-display)] text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-ink)] leading-tight">
+            <h2 className="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-ink)] leading-tight">
               {t("title")}
             </h2>
-            <p className="text-[var(--color-ink-muted)] mt-2 max-w-xl lg:text-lg">{t("subtitle")}</p>
+            <p className="text-[var(--color-ink-muted)] mt-3 lg:mt-4 max-w-xl text-base lg:text-lg">{t("subtitle")}</p>
           </div>
           <a
             href={casitasHref}
@@ -38,7 +38,7 @@ export function SleepSection() {
           </a>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-8">
           {casitas.map((c) => {
             const tr = c.translations[locale];
             const url = getPlaceImageUrl(c.slug);
@@ -58,11 +58,11 @@ export function SleepSection() {
                     className="transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
-                <div className="p-3">
-                  <p className="font-[var(--font-display)] font-semibold text-sm leading-tight mb-1">
+                <div className="p-4 lg:p-5">
+                  <p className="font-[var(--font-display)] font-semibold text-sm lg:text-base leading-tight mb-2">
                     {tr.name}
                   </p>
-                  <p className="text-xs text-[var(--color-ink-muted)] line-clamp-2">
+                  <p className="text-xs lg:text-sm text-[var(--color-ink-muted)] line-clamp-2 leading-relaxed">
                     {tr.description}
                   </p>
                 </div>

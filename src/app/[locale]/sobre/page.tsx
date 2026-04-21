@@ -30,9 +30,9 @@ export default async function AboutPage({
 
   return (
     <>
-      <article className="container-rc py-12 lg:py-20">
+      <article className="container-rc py-20 sm:py-28 lg:py-36">
         <div className="max-w-3xl">
-          <h1 className="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-ink)] mb-6 leading-tight">
+          <h1 className="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-ink)] mb-8 leading-tight">
             {t("title")}
           </h1>
           <p className="text-lg lg:text-xl text-[var(--color-ink-muted)] leading-relaxed">

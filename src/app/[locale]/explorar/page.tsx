@@ -35,12 +35,12 @@ export default async function ExplorarPage({
 
   return (
     <>
-      <header className="container-rc pt-8 sm:pt-12 lg:pt-16 pb-4">
+      <header className="container-rc pt-16 sm:pt-24 lg:pt-32 pb-8 lg:pb-12">
         <div className="max-w-3xl">
-          <h1 className="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-ink)] mb-3 leading-tight">
+          <h1 className="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-ink)] mb-5 leading-tight">
             {t("title")}
           </h1>
-          <p className="text-lg lg:text-xl text-[var(--color-ink-muted)]">
+          <p className="text-lg lg:text-xl text-[var(--color-ink-muted)] leading-relaxed">
             {t("subtitle")}
           </p>
         </div>
