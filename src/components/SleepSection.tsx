@@ -14,7 +14,7 @@ export function SleepSection() {
   const casitasHref = withUtm(CASITAS_URL, "home-sleep");
 
   return (
-    <div className="bg-gradient-to-b from-[var(--color-warm)]/5 to-[var(--color-warm)]/20">
+    <div>
       <section className="container-rc py-24 sm:py-32 lg:py-40">
         <div className="flex items-start justify-between gap-6 mb-10 lg:mb-14">
           <div>

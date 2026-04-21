@@ -22,7 +22,7 @@ export function HomeActivitiesTeaser({ activities }: Props) {
   if (activities.length === 0) return null;
 
   return (
-    <section className="bg-[var(--color-surface-muted)]">
+    <section>
       <div className="container-rc py-24 sm:py-32 lg:py-40">
         <div className="flex items-end justify-between gap-6 mb-10 lg:mb-14">
           <div>

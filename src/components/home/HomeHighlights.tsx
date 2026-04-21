@@ -26,7 +26,7 @@ export function HomeHighlights({ allPlaces, highlights }: Props) {
   const locale = useLocale() as Locale;
 
   return (
-    <section id="map" className="bg-[var(--color-surface)]">
+    <section id="map">
       <div className="container-rc pt-24 sm:pt-32 lg:pt-40 pb-24 sm:pb-32 lg:pb-40">
         {/* Mapa full */}
         <div className="mb-20 sm:mb-28 lg:mb-36 fade-up">

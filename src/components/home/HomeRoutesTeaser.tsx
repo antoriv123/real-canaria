@@ -16,7 +16,7 @@ export function HomeRoutesTeaser() {
   const preview = routes.slice(0, 3);
 
   return (
-    <section className="bg-[var(--color-surface)]">
+    <section>
       <div className="container-rc py-24 sm:py-32 lg:py-40">
         <div className="flex items-end justify-between gap-6 mb-10 lg:mb-14">
           <div>
