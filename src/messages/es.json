@@ -143,13 +143,16 @@
   },
   "home": {
     "highlightsTitle": "Lo imprescindible",
+    "highlightsHeadline": "Sitios que nadie debería perderse.",
     "highlightsSubtitle": "Lo que enseñaríamos a un amigo que viene por primera vez.",
     "seeAllPlaces": "Ver todos los sitios",
     "activitiesTitle": "Qué hacer",
-    "activitiesSubtitle": "Planes que no se improvisan — catamarán, senderos guiados, parques.",
+    "activitiesHeadline": "Planes para reservar antes de venir.",
+    "activitiesSubtitle": "Catamarán, senderos guiados, parques — lo que no se improvisa.",
     "seeAllActivities": "Ver todas las actividades",
     "routesTitle": "Planes de un día",
-    "routesSubtitle": "Itinerarios ya resueltos, con paradas y tiempos.",
+    "routesHeadline": "Itinerarios completos, sin pensar nada.",
+    "routesSubtitle": "Paradas y tiempos para aprovechar cada día al máximo.",
     "seeAllRoutes": "Ver todas las rutas"
   },
   "notFound": {

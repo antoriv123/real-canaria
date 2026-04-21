@@ -143,13 +143,16 @@
   },
   "home": {
     "highlightsTitle": "Het belangrijkste",
+    "highlightsHeadline": "Plekken die niemand mag missen.",
     "highlightsSubtitle": "Wat we een vriend zouden laten zien die voor het eerst komt.",
     "seeAllPlaces": "Alle plekken zien",
     "activitiesTitle": "Wat te doen",
-    "activitiesSubtitle": "Plannen die je niet improviseert — catamaran, begeleide wandelingen, parken.",
+    "activitiesHeadline": "Plannen om vooraf te boeken.",
+    "activitiesSubtitle": "Catamaran, begeleide wandelingen, parken — niets improviseren.",
     "seeAllActivities": "Alle activiteiten zien",
     "routesTitle": "Dagplannen",
-    "routesSubtitle": "Kant-en-klare routes met stops en tijden.",
+    "routesHeadline": "Complete routes, zonder nadenken.",
+    "routesSubtitle": "Stops en tijden om elke dag ten volle te benutten.",
     "seeAllRoutes": "Alle routes zien"
   },
   "notFound": {

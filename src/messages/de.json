@@ -143,13 +143,16 @@
   },
   "home": {
     "highlightsTitle": "Das Wesentliche",
+    "highlightsHeadline": "Orte, die niemand verpassen sollte.",
     "highlightsSubtitle": "Was wir einem Freund zeigen würden, der zum ersten Mal kommt.",
     "seeAllPlaces": "Alle Orte sehen",
     "activitiesTitle": "Was tun",
-    "activitiesSubtitle": "Pläne, die man nicht improvisiert — Katamaran, geführte Wanderungen, Parks.",
+    "activitiesHeadline": "Pläne, die man vor der Reise bucht.",
+    "activitiesSubtitle": "Katamaran, geführte Wanderungen, Parks — nichts zu improvisieren.",
     "seeAllActivities": "Alle Aktivitäten sehen",
     "routesTitle": "Tagespläne",
-    "routesSubtitle": "Fertige Routen mit Stopps und Zeiten.",
+    "routesHeadline": "Fertige Routen, kein Nachdenken.",
+    "routesSubtitle": "Stopps und Zeiten, um jeden Tag zu nutzen.",
     "seeAllRoutes": "Alle Routen sehen"
   },
   "notFound": {

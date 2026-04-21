@@ -143,13 +143,16 @@
   },
   "home": {
     "highlightsTitle": "L'essenziale",
+    "highlightsHeadline": "Posti che nessuno dovrebbe perdere.",
     "highlightsSubtitle": "Quello che mostreremmo a un amico alla prima volta.",
     "seeAllPlaces": "Vedi tutti i posti",
     "activitiesTitle": "Cosa fare",
-    "activitiesSubtitle": "Piani che non si improvvisano — catamarano, trekking guidati, parchi.",
+    "activitiesHeadline": "Piani da prenotare prima di partire.",
+    "activitiesSubtitle": "Catamarano, trekking guidati, parchi — niente da improvvisare.",
     "seeAllActivities": "Vedi tutte le attività",
     "routesTitle": "Piani di un giorno",
-    "routesSubtitle": "Itinerari pronti con tappe e tempi.",
+    "routesHeadline": "Itinerari completi, senza pensarci.",
+    "routesSubtitle": "Tappe e tempi per sfruttare al massimo ogni giornata.",
     "seeAllRoutes": "Vedi tutti gli itinerari"
   },
   "notFound": {

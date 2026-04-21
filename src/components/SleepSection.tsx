@@ -14,13 +14,16 @@ export function SleepSection() {
   const casitasHref = withUtm(CASITAS_URL, "home-sleep");
 
   return (
-    <div className="bg-gradient-to-b from-[var(--color-bg)] to-[var(--color-warm)]/10 border-t border-[var(--color-border)]">
+    <div className="bg-gradient-to-b from-[var(--color-warm)]/5 to-[var(--color-warm)]/20">
       <section className="container-rc py-16 sm:py-24 lg:py-32">
         <div className="flex items-start justify-between gap-6 mb-10 lg:mb-14">
           <div>
-            <div className="flex items-center gap-2 mb-4 text-[var(--color-warm)]">
-              <Bed size={18} />
-              <span className="text-xs font-bold uppercase tracking-[0.14em]">Casitas Canarias</span>
+            <div className="flex items-center gap-3 mb-4 lg:mb-6">
+              <span className="font-[var(--font-display)] text-sm font-bold text-[var(--color-warm)]">04</span>
+              <span className="inline-block w-10 h-px bg-[var(--color-warm)]/40" />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
+                Casitas Canarias
+              </span>
             </div>
             <h2 className="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-ink)] leading-tight">
               {t("title")}

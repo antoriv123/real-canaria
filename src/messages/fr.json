@@ -143,13 +143,16 @@
   },
   "home": {
     "highlightsTitle": "L'essentiel",
+    "highlightsHeadline": "Des lieux que personne ne devrait manquer.",
     "highlightsSubtitle": "Ce qu'on montrerait à un ami qui vient pour la première fois.",
     "seeAllPlaces": "Voir tous les lieux",
     "activitiesTitle": "Que faire",
-    "activitiesSubtitle": "Des plans qui ne s'improvisent pas — catamaran, rando guidée, parcs.",
+    "activitiesHeadline": "Des plans à réserver avant de venir.",
+    "activitiesSubtitle": "Catamaran, rando guidée, parcs — rien à improviser.",
     "seeAllActivities": "Voir toutes les activités",
     "routesTitle": "Plans d'une journée",
-    "routesSubtitle": "Itinéraires prêts avec étapes et horaires.",
+    "routesHeadline": "Itinéraires complets, aucun effort.",
+    "routesSubtitle": "Étapes et horaires pour profiter à fond chaque jour.",
     "seeAllRoutes": "Voir tous les itinéraires"
   },
   "notFound": {

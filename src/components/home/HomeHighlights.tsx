@@ -26,10 +26,7 @@ export function HomeHighlights({ allPlaces, highlights }: Props) {
   const locale = useLocale() as Locale;
 
   return (
-    <section
-      id="map"
-      className="bg-[var(--color-surface)] border-t border-[var(--color-border)]"
-    >
+    <section id="map" className="bg-[var(--color-surface)]">
       <div className="container-rc pt-16 sm:pt-24 lg:pt-32 pb-16 sm:pb-24 lg:pb-32">
         {/* Mapa full */}
         <div className="mb-20 sm:mb-28 lg:mb-36 fade-up">
@@ -39,8 +36,15 @@ export function HomeHighlights({ allPlaces, highlights }: Props) {
         {/* Destacados */}
         <div className="flex items-end justify-between gap-6 mb-10 lg:mb-14">
           <div>
+            <div className="flex items-center gap-3 mb-4 lg:mb-6">
+              <span className="font-[var(--font-display)] text-sm font-bold text-[var(--color-primary)]">01</span>
+              <span className="inline-block w-10 h-px bg-[var(--color-primary)]/40" />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
+                {t("highlightsTitle")}
+              </span>
+            </div>
             <h2 className="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-ink)] leading-tight">
-              {t("highlightsTitle")}
+              {t("highlightsHeadline")}
             </h2>
             <p className="text-[var(--color-ink-muted)] mt-3 lg:mt-4 max-w-xl text-base lg:text-lg">
               {t("highlightsSubtitle")}

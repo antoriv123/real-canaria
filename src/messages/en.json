@@ -143,13 +143,16 @@
   },
   "home": {
     "highlightsTitle": "The essentials",
+    "highlightsHeadline": "Spots no one should miss.",
     "highlightsSubtitle": "What we'd show a friend visiting for the first time.",
     "seeAllPlaces": "See every spot",
     "activitiesTitle": "Things to do",
-    "activitiesSubtitle": "Plans you can't wing — catamarans, guided hikes, parks.",
+    "activitiesHeadline": "Plans worth booking before you arrive.",
+    "activitiesSubtitle": "Catamarans, guided hikes, parks — things you can't wing.",
     "seeAllActivities": "See every activity",
     "routesTitle": "Full-day plans",
-    "routesSubtitle": "Ready-made itineraries with stops and timings.",
+    "routesHeadline": "Full itineraries, zero thinking.",
+    "routesSubtitle": "Stops and timings to make every day count.",
     "seeAllRoutes": "See every route"
   },
   "notFound": {

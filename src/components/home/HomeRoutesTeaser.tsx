@@ -16,12 +16,19 @@ export function HomeRoutesTeaser() {
   const preview = routes.slice(0, 3);
 
   return (
-    <section className="bg-[var(--color-surface)] border-t border-[var(--color-border)]">
+    <section className="bg-[var(--color-surface)]">
       <div className="container-rc py-16 sm:py-24 lg:py-32">
         <div className="flex items-end justify-between gap-6 mb-10 lg:mb-14">
           <div>
+            <div className="flex items-center gap-3 mb-4 lg:mb-6">
+              <span className="font-[var(--font-display)] text-sm font-bold text-[var(--color-accent)]">03</span>
+              <span className="inline-block w-10 h-px bg-[var(--color-accent)]/40" />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
+                {t("routesTitle")}
+              </span>
+            </div>
             <h2 className="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-ink)] leading-tight">
-              {t("routesTitle")}
+              {t("routesHeadline")}
             </h2>
             <p className="text-[var(--color-ink-muted)] mt-3 lg:mt-4 max-w-xl text-base lg:text-lg">
               {t("routesSubtitle")}
