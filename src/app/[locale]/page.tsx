@@ -6,7 +6,6 @@ import { HomeRoutesTeaser } from "@/components/home/HomeRoutesTeaser";
 import { SleepSection } from "@/components/SleepSection";
 import { SignupForm } from "@/components/auth/SignupForm";
 import { places } from "@/data/places";
-import { routes } from "@/data/routes";
 import { buildPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 
@@ -48,11 +47,6 @@ export default async function HomePage({
     .filter((p) => p.category === "activity" && p.featured)
     .slice(0, 4);
 
-  // Totales para la barra de stats
-  const totalSites = places.filter((p) => p.category !== "activity").length;
-  const totalActivities = places.filter((p) => p.category === "activity").length;
-  const totalRoutes = routes.length;
-
   return (
     <>
       {/* Hero */}
@@ -64,7 +58,7 @@ export default async function HomePage({
               "radial-gradient(circle at 70% 0%, rgba(5,113,94,0.10), transparent 55%), radial-gradient(circle at 10% 100%, rgba(228,173,19,0.10), transparent 55%)",
           }}
         />
-        <div className="container-rc pt-16 sm:pt-24 lg:pt-32 pb-20 sm:pb-32 lg:pb-40 fade-up">
+        <div className="container-rc pt-16 sm:pt-24 lg:pt-32 pb-16 sm:pb-24 lg:pb-32 fade-up">
           <div className="max-w-4xl lg:max-w-5xl mx-auto text-center">
             <span className="inline-flex items-center gap-2 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-accent)] mb-8 sm:mb-10">
               <span className="inline-block w-10 sm:w-12 h-px bg-[var(--color-accent)]" />
@@ -93,24 +87,6 @@ export default async function HomePage({
             </div>
           </div>
 
-          {/* Stats row — visible desde sm arriba */}
-          <div className="hidden sm:grid grid-cols-4 gap-6 lg:gap-12 max-w-4xl lg:max-w-5xl mx-auto mt-20 lg:mt-28">
-            {[
-              { value: totalSites, label: t("statsSites") },
-              { value: totalActivities, label: t("statsActivities") },
-              { value: totalRoutes, label: t("statsRoutes") },
-              { value: 6, label: t("statsLanguages") },
-            ].map((s) => (
-              <div key={s.label} className="text-center">
-                <div className="font-[var(--font-display)] text-4xl lg:text-5xl font-bold text-[var(--color-primary)]">
-                  {s.value}
-                </div>
-                <div className="text-xs lg:text-sm text-[var(--color-ink-muted)] mt-3 lg:mt-4 uppercase tracking-[0.12em]">
-                  {s.label}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
