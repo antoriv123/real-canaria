@@ -107,9 +107,16 @@
     "distanceLabel": "Entfernung: {km} km"
   },
   "sleep": {
-    "title": "Wo übernachten",
-    "subtitle": "Landhäuser von Casitas Canarias",
-    "cta": "Alle Häuser ansehen"
+    "title": "Wo übernachten auf Gran Canaria",
+    "subtitle": "Landhäuser von Casitas Canarias — dein eigenes Haus mit Aussicht, kein weiteres Hotel.",
+    "cta": "Alle Häuser ansehen",
+    "ctaBlock": {
+      "fullTitle": "Das echte Gran Canaria erlebst du von einem Landhaus aus.",
+      "fullSubtitle": "Wach mit Blick auf die Schlucht auf, koche mit dem, was du auf dem Markt kaufst, starte deine Wanderungen vor der Haustür. Kein Hotel — dein Zuhause hier.",
+      "compactTitle": "Schon eine Unterkunft?",
+      "compactSubtitle": "Unsere Landhäuser liegen direkt um die Ecke von allem, was du hier siehst.",
+      "cta": "Landhäuser ansehen"
+    }
   },
   "notFound": {
     "title": "Seite nicht gefunden",

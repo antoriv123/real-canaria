@@ -5,11 +5,13 @@ import { getPlaceImageUrl } from "@/data/place-images";
 import { PlaceImage } from "./places/PlaceImage";
 import type { Locale } from "@/i18n/config";
 import { Bed, ArrowRight } from "lucide-react";
+import { CASITAS_URL, withUtm } from "@/lib/site";
 
 export function SleepSection() {
   const t = useTranslations("sleep");
   const locale = useLocale() as Locale;
   const casitas = places.filter((p) => p.isCasita).slice(0, 4);
+  const casitasHref = withUtm(CASITAS_URL, "home-sleep");
 
   return (
     <div className="bg-gradient-to-b from-[var(--color-bg)] to-[var(--color-warm)]/10 border-t border-[var(--color-border)]">
@@ -26,7 +28,7 @@ export function SleepSection() {
             <p className="text-[var(--color-ink-muted)] mt-1">{t("subtitle")}</p>
           </div>
           <a
-            href="https://casitascanarias.com"
+            href={casitasHref}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden sm:inline-flex items-center gap-1 px-4 h-10 rounded-full bg-[var(--color-warm)] text-[#2A1E00] font-semibold text-sm shrink-0 hover:brightness-110 transition-all"
@@ -70,7 +72,7 @@ export function SleepSection() {
         </div>
 
         <a
-          href="https://casitascanarias.com"
+          href={casitasHref}
           target="_blank"
           rel="noopener noreferrer"
           className="sm:hidden mt-4 inline-flex items-center gap-1 px-4 h-10 rounded-full bg-[var(--color-warm)] text-[#2A1E00] font-semibold text-sm"

@@ -107,9 +107,16 @@
     "distanceLabel": "Distance : {km} km"
   },
   "sleep": {
-    "title": "Où dormir",
-    "subtitle": "Maisons rurales sélectionnées par Casitas Canarias",
-    "cta": "Voir toutes les maisons"
+    "title": "Où dormir à Gran Canaria",
+    "subtitle": "Maisons rurales de Casitas Canarias — ta propre maison avec vue, pas un hôtel de plus.",
+    "cta": "Voir toutes les maisons",
+    "ctaBlock": {
+      "fullTitle": "La vraie Canaria se vit depuis une maison rurale.",
+      "fullSubtitle": "Réveille-toi avec vue sur le barranco, cuisine ce que tu achètes au marché, pars en rando dès la porte. Pas un hôtel — ta maison ici.",
+      "compactTitle": "Tu as déjà où dormir ?",
+      "compactSubtitle": "Nos maisons rurales sont à deux pas de tout ce que tu vois ici.",
+      "cta": "Voir les maisons"
+    }
   },
   "notFound": {
     "title": "Page introuvable",

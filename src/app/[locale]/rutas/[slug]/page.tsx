@@ -10,6 +10,7 @@ import { PlaceList } from "@/components/places/PlaceList";
 import type { Locale } from "@/i18n/config";
 import { buildPageMetadata } from "@/lib/seo";
 import { absoluteUrl, canonicalUrl } from "@/lib/site";
+import { CasitaCtaBlock } from "@/components/cross-sell/CasitaCtaBlock";
 
 export function generateStaticParams() {
   return routes.map((r) => ({ slug: r.slug }));
@@ -153,6 +154,7 @@ export default async function RouteDetailPage({
       </ol>
 
       <PlaceList places={stops} />
+      <CasitaCtaBlock variant="compact" campaign="rutas-detalle" />
     </article>
   );
 }

@@ -1,9 +1,11 @@
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
+import { CASITAS_URL, withUtm } from "@/lib/site";
 
 export function Footer() {
   const t = useTranslations("footer");
   const locale = useLocale();
+  const casitasHref = withUtm(CASITAS_URL, "footer");
 
   return (
     <footer className="border-t border-[var(--color-border)] bg-[var(--color-surface-muted)] mt-16">
@@ -19,7 +21,7 @@ export function Footer() {
 
           <div className="flex flex-col sm:items-end gap-2 text-sm">
             <a
-              href="https://casitascanarias.com"
+              href={casitasHref}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[var(--color-primary)] hover:underline font-medium"

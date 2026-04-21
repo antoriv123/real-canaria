@@ -5,6 +5,7 @@ import { getUserById } from "@/lib/db";
 import { recommendForDate } from "@/lib/recommend";
 import { PlanFavorites } from "@/components/PlanFavorites";
 import { buildPageMetadata } from "@/lib/seo";
+import { CasitaCtaBlock } from "@/components/cross-sell/CasitaCtaBlock";
 import Link from "next/link";
 import { Sparkles } from "lucide-react";
 
@@ -101,6 +102,8 @@ export default async function PlanPage({
 
       {/* Recomendaciones + favoritos */}
       <PlanFavorites recommendedSlugs={recommended.map((p) => p.slug)} />
+
+      <CasitaCtaBlock variant="compact" campaign="plan" />
     </div>
   );
 }

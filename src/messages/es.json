@@ -107,9 +107,16 @@
     "distanceLabel": "Distancia: {km} km"
   },
   "sleep": {
-    "title": "Dónde dormir",
-    "subtitle": "Casas rurales seleccionadas por Casitas Canarias",
-    "cta": "Ver todas las casas"
+    "title": "Dónde dormir en Gran Canaria",
+    "subtitle": "Casas rurales de Casitas Canarias — tu casa con vistas, no un hotel más.",
+    "cta": "Ver todas las casas",
+    "ctaBlock": {
+      "fullTitle": "La Canaria real se vive desde una casa rural.",
+      "fullSubtitle": "Despierta con vistas al barranco, cocina lo que compras en el mercado y sal de senderismo desde la puerta. No es un hotel, es tu casa aquí.",
+      "compactTitle": "¿Ya sabes dónde duermes?",
+      "compactSubtitle": "Nuestras casas rurales están a un paso de todo lo que ves aquí.",
+      "cta": "Ver casas rurales"
+    }
   },
   "notFound": {
     "title": "Página no encontrada",

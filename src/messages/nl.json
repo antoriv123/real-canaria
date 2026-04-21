@@ -107,9 +107,16 @@
     "distanceLabel": "Afstand: {km} km"
   },
   "sleep": {
-    "title": "Waar slapen",
-    "subtitle": "Landhuizen van Casitas Canarias",
-    "cta": "Alle huizen zien"
+    "title": "Waar slapen op Gran Canaria",
+    "subtitle": "Landhuizen van Casitas Canarias — je eigen huis met uitzicht, geen gewoon hotel.",
+    "cta": "Alle huizen zien",
+    "ctaBlock": {
+      "fullTitle": "Het echte Gran Canaria beleef je vanuit een landhuis.",
+      "fullSubtitle": "Word wakker met uitzicht op de barranco, kook met wat je op de markt koopt, start je wandelingen bij de voordeur. Geen hotel — je thuis hier.",
+      "compactTitle": "Al een slaapplek geregeld?",
+      "compactSubtitle": "Onze landhuizen liggen vlak bij alles wat je hier ziet.",
+      "cta": "Landhuizen bekijken"
+    }
   },
   "notFound": {
     "title": "Pagina niet gevonden",
